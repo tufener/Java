@@ -1,0 +1,239 @@
+package projet2;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		tprandom();
+
+	}
+
+	static void tpinfo() {
+		// on nomme déjà les claviers nécessaire un pour les String et l'autre
+		// obligatoire pour les chiffres entiers, décimales ...
+		Scanner clavier = new Scanner(System.in);
+		Scanner clavier1 = new Scanner(System.in);
+
+		// Le mode console pour afficher et inscrire le nom...
+		System.out.println("nom ???");
+		String nom = clavier.nextLine();
+
+		// Le mode console pour afficher et inscrire le prénom...
+		System.out.println("prénom ???");
+		String prénom = clavier.nextLine();
+
+		// Le mode console pour afficher et inscrire la date de naissance (int
+		// car c'est des chiffres)...
+		System.out.println("date de naissance ???");
+		int datedenaissance = clavier1.nextInt();
+
+		// Le mode console pour afficher et inscrire le sexe...
+		System.out.println("sexe ???");
+		String sexe = clavier.nextLine();
+
+		String s = "bienvenue " + nom + " " + "\t " + prénom + " " + datedenaissance + " " + sexe;
+		System.out.println(s);
+
+	}
+
+	static void tpage() {
+		// on nomme déjà les claviers nécessaire un pour les String et l'autre
+		// (clavierXX.nextInt()) (suite ligne en dessous)
+		// obligatoire pour les chiffres entiers, décimales ...
+		Scanner clavier1 = new Scanner(System.in);
+		System.out.println("Nom");
+		String nom = clavier1.nextLine();
+
+		Scanner clavier = new Scanner(System.in);
+		System.out.println("Age ???");
+		int age = clavier.nextInt();
+
+		final int ageMin = 0;
+		final int ageMax = 120;
+		final int ageMineur = 18;
+		final int ageMajeur = 50;
+
+		// "\t" pour laisser deux sauts de ligne entre les éléments
+		// "\n" pour aller à la ligne
+		String status = nom + "\t" + ":" + age + " ==>" + " ";
+		if ((age >= ageMin) && (age <= ageMineur))
+			status += "vous etes mineur";
+
+		else if ((age >= ageMineur) && (age < ageMajeur))
+			status += "vous etes majeur";
+
+		else if ((age >= ageMajeur) && (age < ageMax))
+			status += "vous etes senior";
+
+		else
+			status += "erreur";
+
+		System.out.println(status);
+
+	}
+
+	static void tpmenu() {
+		System.out.println("Choisir le tp  \n  1: tpinfo  \n  2:tpage");
+		Scanner réponse = new Scanner(System.in); // variable réponse ou clavier
+													// peu importe le nom
+		int saisie = réponse.nextInt();
+
+		switch (saisie) {
+		case 1:
+			tpinfo();
+			break;
+
+		case 2:
+			tpage();
+			break;
+
+		default:
+			System.out.println("erreur de saisie");
+			break;
+		}
+
+	}
+
+	static void tpcalculette() {
+		System.out.println("Choisir le tp  \n  1: tpinfo  \n  2:tpage");
+		Scanner réponse = new Scanner(System.in); // variable réponse ou clavier
+													// peu importe le nom
+		int saisie = réponse.nextInt();
+
+		switch (saisie) {
+		case 1:
+			tpinfo();
+			break;
+
+		case 2:
+			tpage();
+			break;
+
+		default:
+			System.out.println("erreur de saisie");
+			break;
+		}
+
+	}
+
+	static void tpbouclev1() {
+
+		Scanner r = new Scanner(System.in);
+		Scanner h = new Scanner(System.in);
+		Scanner l = new Scanner(System.in);
+
+		System.out.println("Donner un caractere");
+		String nb = r.nextLine();
+
+		System.out.println("Donner la hauteur");
+		int hauteur = h.nextInt();
+
+		System.out.println("Donner largeur");
+		int largeur = l.nextInt();
+
+		for (int i = 0; i < hauteur; i++) {
+			for (int j = 0; j < largeur; j++)
+
+				System.out.print(nb + "\t");
+			System.out.println(" ");
+
+		}
+
+	}
+
+	static void tpbouclev2() { // on fait conquéténation += afin de garder plus
+								// qu'un println dans notre code
+
+		Scanner r = new Scanner(System.in); // pour les lettres Str
+		Scanner h = new Scanner(System.in); // pour les chiffres Int
+
+		System.out.println("Donner un caractere");
+		String nb = r.nextLine();
+		String resultat = "";
+
+		System.out.println("Donner la hauteur");
+		int hauteur = h.nextInt();
+
+		System.out.println("Donner largeur");
+		int largeur = h.nextInt();
+
+		for (int i = 0; i < hauteur; i++) {
+			for (int j = 0; j < largeur; j++)
+				resultat += nb + "\t";
+			resultat += "\n";
+
+		}
+		System.out.println(resultat);
+	}
+
+	static void tpbouclev3() { // StringBuilder permet de gagner en performance
+								// (temps de CPU)
+
+		StringBuilder sb = new StringBuilder();
+		// L'utilisateur renseigne les données
+		Scanner clavierst = new Scanner(System.in);
+		Scanner clavierint = new Scanner(System.in);
+
+		System.out.println("Donner un caractère:");
+		String car = clavierst.nextLine();
+
+		System.out.println("Donner la hauteur:");
+		int hauteur = clavierint.nextInt();
+
+		System.out.println("Donner la largeur:");
+		int largeur = clavierint.nextInt();
+
+		for (int j = 0; j < hauteur; j++) {
+			for (int i = 0; i < largeur; i++)
+				sb.append(car + "\t");
+			sb.append("\n");
+
+		}
+		String resultat = sb.toString();
+
+		System.out.println(resultat);
+	}
+
+	static void tppuissancev1() {
+
+		double res = Math.pow(2, 8);
+		System.out.println(2 + " puissance" + 8 + " = " + res);
+
+	}
+
+	static void tppuissancev2() {
+
+		Scanner p = new Scanner(System.in);
+		Scanner b = new Scanner(System.in);
+		System.out.println("Donner la base:");
+		String base = b.nextLine();
+		System.out.println("Donner la puissance:");
+		String puissance = p.nextLine();
+
+		double res = Math.pow(Double.parseDouble(base), Double.parseDouble(puissance));
+		System.out.println(base + " puissance" + puissance + " = " + res);
+
+	}
+
+	static void tprandom() {
+
+		System.out.print("Saisir le chiffre à deviner entre 0 et 10 inclus :\n");
+		Scanner res = new Scanner(System.in);
+
+		Random rand = new Random();
+		Random rand1 = new Random();
+		int nb = rand.nextInt(10);
+		int al = rand.nextInt(10);
+
+		do {
+			nb += al;
+			nb++;
+		} while (al < 10);
+		System.out.println("Somme=" + nb);
+
+	}
+}

@@ -1,0 +1,5 @@
+package projetCommercial;
+
+public enum EPole {
+
+}

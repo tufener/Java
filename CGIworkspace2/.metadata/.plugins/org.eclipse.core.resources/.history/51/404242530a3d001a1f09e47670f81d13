@@ -1,0 +1,5 @@
+package projetCalculException;
+
+public class MultException extends Exception {
+
+}

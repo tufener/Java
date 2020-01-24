@@ -1,0 +1,17 @@
+package projetCalculException;
+
+public class ConcervsionException throws Exception{
+{
+
+	private String info;
+
+	public MultException(String message, String info){
+		super(message);
+		this.info = info;
+	}
+
+	public String toString() {
+		return getMessage() + "   " + info;
+	
+	}
+	

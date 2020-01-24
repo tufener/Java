@@ -1,0 +1,9 @@
+package model;
+
+public class Ligne {
+	private Article article;
+	private Caddie caddie;
+	private int quantite;
+	private String Article;
+
+}

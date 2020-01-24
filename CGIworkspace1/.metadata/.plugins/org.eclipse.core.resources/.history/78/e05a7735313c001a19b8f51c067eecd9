@@ -1,0 +1,9 @@
+package model;
+
+public enum EBoisson {
+	
+	petit(1),
+	moyen(2),
+	grand(3);
+
+}

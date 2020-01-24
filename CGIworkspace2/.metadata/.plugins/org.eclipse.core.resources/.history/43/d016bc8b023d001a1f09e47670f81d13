@@ -1,0 +1,7 @@
+package projetException;
+
+public class MultException extends Exception{ //multexception class surveillée
+	
+	
+
+}

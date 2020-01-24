@@ -1,0 +1,10 @@
+package projetCommercial;
+
+public class Commercial {
+	private Client client;
+	private String nom;
+	private String prenom; 
+	private int secu;
+	
+
+}

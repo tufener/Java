@@ -1,0 +1,117 @@
+package user;
+
+import model.Bateau;
+import model.EBateau;
+import model.Vehicule;
+import model.Velo;
+import model.Voiture;
+
+public class Test {
+
+	public static void main(String[] args) {
+		test6();
+
+	}
+
+	static void test6() {
+		// creation des instances
+
+		Voiture voiture = new Voiture("K2000", 40000);
+
+		Vehicule vehicule = new Voiture("ORNI", 0);
+
+		Velo velo = new Velo("Ciraptor", 550);
+
+		Bateau bateau = new Bateau("Caravelle", 2000, EBateau.grand);
+
+	}
+
+	static void test5() {
+		// creation des instances
+
+		Voiture v1 = new Voiture("RENAULT", 5000);
+		Vehicule v2 = v1; // Caste implicite de v1 vers v2 (fille vers la mere)
+							// mais on aura pas accès à gps etc.
+
+		System.out.println(v1);
+		System.out.println(v2);
+		Voiture v3 = (Voiture) v2; // cast explicite (avec ceci on aura l'accès
+									// à gps etc.
+
+	}
+
+	static void test4() {
+		// creation des instances
+
+		Vehicule vehicule = new Voiture("ORNI", 0);
+		Object vehicule2 = new Vehicule("DESZ", 5);
+		System.out.println(vehicule2.toString()); // la méthode avancer à
+													// disparu car dans Objet il
+													// n'existe pas
+		// toString ce sera celle de vehicule et non l'objet !!! c'est comme ca
+		// dans JAVA
+		Vehicule voiture = new Voiture("ASD", 50);
+		Object voiture2 = new Voiture("ASD", 50);
+		Object bateau = new Bateau("SDF", 6000, EBateau.grand);
+		System.out.println(bateau);
+
+	}
+
+	static void test3() {
+		// creation des instances
+
+		Voiture voiture = new Voiture("K2000", 40000);
+
+		Vehicule vehicule = new Voiture("ORNI", 0);
+
+		Velo velo = new Velo("Ciraptor", 550);
+
+		Bateau bateau = new Bateau("Caravelle", 2000, EBateau.grand);
+
+		Vehicule[] tab = { velo, voiture, vehicule, bateau };
+		for (Vehicule v : tab)
+			System.out.println(v.avancer()); // methode avancer est polymorphe
+												// car elle change selon le
+												// vehicule
+		// Le polymorphisme offre aux objets la possibilité d ’appartenir à
+		// plusieurs catégories
+		// à la fois (velo, voiture, vehicule, bateau)
+	}
+
+	static void test2() {
+		// creation des instances
+
+		Voiture voiture1 = new Voiture("K2000", 40000);
+		System.out.println(voiture1.avancer());
+		voiture1.gpsOnOff();
+		Vehicule voiture2 = new Voiture("ORNI", 0);
+		// voiture2.gps --> nous n'avons pu accès à le méthode gpsOnOff()... il
+		// reste visible que les méthodes de la mere
+		// mais ce qu'il fixe l'éxecution c'est la fille
+		Vehicule velo1 = new Velo("Ciraptor", 550);
+		System.out.println(velo1.avancer()); // c'est toujours la méthode de la
+												// fille qui s'éxecute car il y
+												// a un override
+
+	}
+
+	static void test1() {
+		// creation des instances
+		Velo velo = new Velo("Ciraptor", 550);
+		Voiture voiture = new Voiture("K2000", 40000);
+		Vehicule vehicule = new Vehicule("ORNI", 0);
+		Bateau bateau = new Bateau("Caravelle", 2000, EBateau.grand);
+
+		// Test avancer() et toString()
+		System.out.println("Vélo : " + velo + "\t" + velo.avancer());
+		System.out.println(voiture + "\t" + voiture.avancer());
+		System.out.println(vehicule + "\t" + vehicule.avancer());
+		System.out.println(bateau + "\t" + bateau.avancer());
+
+		// test gpsOnOff()
+		voiture.gpsOnOff();
+		System.out.println("\n" + voiture);
+
+	}
+
+}

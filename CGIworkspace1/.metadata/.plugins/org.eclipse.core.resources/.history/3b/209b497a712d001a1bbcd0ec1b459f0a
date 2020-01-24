@@ -1,0 +1,34 @@
+package tpTableau;
+
+import java.util.Scanner;
+
+public class TpTableau {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		tpTableauJacky();
+
+	}
+
+	static void tpTableauJacky() {
+		Scanner clavier = new Scanner(System.in);
+		System.out.print("Veuillez saisir la taille du tableau (de chaine) souhaitée: ");
+		int taille = clavier.nextInt();
+
+		String[] Tab = new String[taille];
+
+		Scanner clavierStr = new Scanner(System.in);
+		for (int i = 0; i < Tab.length; i++) {
+			System.out.print("Veuillez saisir l'élément n°" + (i + 1) + " du tableau:");
+
+			Tab[i] = clavierStr.nextLine();
+
+		}
+
+		System.out.println("Voici un affichage du tableau demandé:");
+		for (int i = 0; i < Tab.length; i++) // on peut aussi écrire for(String e:Tab)--> à la ligne Sysoutprintln(e)
+			System.out.println("element " + (i + 1) + " : " + Tab[i]);
+
+	}
+
+}

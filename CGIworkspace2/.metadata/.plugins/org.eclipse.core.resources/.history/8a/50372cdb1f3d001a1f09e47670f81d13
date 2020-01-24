@@ -1,0 +1,61 @@
+package projetCalculException;
+
+import model.NegException;
+import model.OpException;
+
+public class Traitement {
+
+	public static double calcul(double op1, double op2, String operateur) throws NegException,OpException,ArithmeticException {
+		if(op1<0 || op2<0) throw new NegException("Valeur négative détectée" ,op1,op2);
+		switch (operateur) {
+		case "" : throw new OpException("Opérateur pas renseigné" , operateur);
+		case "+":
+		case "add":
+			return ("op1 : " op1 + "op2 : " + op2 + add(op1, op2));
+			break;
+		case "-":
+		case "sous":
+			resultat = sous(op1, op2);
+			break;
+		case "*":
+		case "mult":
+			resultat = mult(op1, op2);
+			break;
+		case "/":
+		case "div":
+			resultat = div(op1, op2);
+			break;
+
+		}
+
+		return resultat;
+
+	}
+
+	static double sous(double a, double b) {
+
+		return a - b;
+	}
+
+	static double mult(double a, double b) throws MultException {
+		String message = "probleme dans mult avec un 0 dans: ";
+
+		if (a == 0)
+			throw new MultException(message, "a");
+		else if (b == 0)
+			throw new MultException(message, "b");
+
+		return a * b;
+
+	}
+
+	static double div(double a, double b) {
+		return a / b;
+	}
+
+	static double add(double a, double b) {
+		double res = a + b;
+		return res;
+	}
+
+}

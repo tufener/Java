@@ -1,0 +1,21 @@
+package model;
+
+public enum EGateau {
+	
+	choco(1), vanille(2);
+
+	private EGateau(int prix) {
+		this.prix = prix;
+	}
+	
+	private int prix;
+
+	public int getVolume() {
+		return prix;
+	}
+	
+	public String toString() {
+		return name() + prix;
+	}
+
+}

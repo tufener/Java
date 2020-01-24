@@ -1,0 +1,39 @@
+package model;
+
+import java.util.Arrays;
+
+public class Groupe {
+	private String nom;
+	private Personne[] tab;
+
+	public Groupe(String nom, int taille) { // constructeur
+		this.nom = nom;
+		tab = new Personne[taille];
+	}
+
+	public boolean ajouter(Personne p) { // rajouter une personne au sein du
+											// groupe
+		boolean res = false; // on positionne toujours le boolean à false (cas
+								// le plus défavorable)
+		for (int i = 0; i < tab.length; i++)
+			if (tab[i] == null) {
+				tab[i] = p;
+				res = true;
+				break;
+
+			}
+		return res;
+
+	}
+
+	@Override
+	public String toString() {
+		String res = "Groupe[nom= " + nom;
+		for (Personne p : tab)
+			if (p != null)
+				res += "\n" + p;
+		return res;
+
+	}
+
+}

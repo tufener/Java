@@ -1,0 +1,15 @@
+package projetTriable;
+
+public class Test {
+
+	public static void main(String[] args) {
+		testInt();
+
+	}
+	
+	static void testInt(){
+		int[] tab = {2,1,6,5,9,8};
+		
+	}
+
+}

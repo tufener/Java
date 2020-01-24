@@ -1,0 +1,9 @@
+package model;
+
+public class OpNegException extends Exception {
+
+	public NegException(String msg, String methode, double s) {
+		super(msg +  methode +  s);
+	}
+
+}

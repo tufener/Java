@@ -1,0 +1,21 @@
+package projetTableau;
+
+public class PorjetTableau {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		testIntv1();
+
+	}
+	
+	static void testIntv1(){
+		int[] tab = new int[3];
+		System.out.println(tab[0]);
+		tab[0]= 10;
+		System.out.println(tab[0]);
+		
+		
+	}
+	
+
+}

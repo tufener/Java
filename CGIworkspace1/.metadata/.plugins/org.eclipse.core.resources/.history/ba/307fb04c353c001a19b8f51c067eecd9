@@ -1,0 +1,11 @@
+package model;
+
+public class Gateau extends Article {
+	private EGateau egateau;
+
+	public Gateau(String nom, int prix) {
+		super(nom, prix);
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,12 @@
+package projetException;
+
+public class MultException extends Exception{ //multexception class surveillée
+	
+	private String info; 
+	public MultException(String message){
+		super(message);
+		this.info = info;
+	}
+	
+
+}

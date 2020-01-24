@@ -1,0 +1,9 @@
+package model;
+
+import java.sql.SQLException;
+
+public class Personne throws ClassNotFoundException, SQLException {
+	
+	public ArrayList<Personne> 
+
+}

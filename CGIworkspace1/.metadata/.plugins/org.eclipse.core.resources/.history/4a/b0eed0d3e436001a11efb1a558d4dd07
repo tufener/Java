@@ -1,0 +1,61 @@
+package projetTriable;
+
+import java.util.Arrays;
+
+public class Test {
+
+	public static void main(String[] args) {
+		testInt();
+		testString();
+		testPersonne();
+
+	}
+	
+	static void testInt(){
+		int[] tab = {2,1,6,5,9,8};
+		affiche(tab);
+		Arrays.sort(tab);
+		
+		affiche(tab);
+		
+	}
+	
+	static void testString(){
+		String[] tab = {"a","f","z","g","x"};
+		affiche(tab);
+		Arrays.sort(tab);
+		affiche(tab);
+		
+	}
+	
+	static void testPersonne(){
+		Personne[] tab = {new Personne("jean", "marc", 10),new Personne("luca", "dupond", 15),new Personne("eric", "malus", 14)};
+		affiche(tab);
+		Comparable<T>
+		Arrays.sort(tab);
+		affiche(tab);
+		
+	}
+	
+	static void affiche(int[] tab){
+		for(int e : tab)
+			System.out.print(e + "\t");
+		System.out.println();
+		
+	}
+	
+	static void affiche(String[] tab){
+		for(String e : tab)
+			System.out.print(e + "\t");
+		System.out.println();
+		
+	}
+	
+	static void affiche(Personne[] tab){
+		for(int e : tab)
+			System.out.println(e + "\t");
+		System.out.println();
+		
+	}
+
+}

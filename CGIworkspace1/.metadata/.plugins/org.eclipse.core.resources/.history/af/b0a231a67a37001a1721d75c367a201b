@@ -1,0 +1,75 @@
+package projetTriable;
+
+public class Personne implements Comparable<Personne>{
+	private String nom;
+	private String prenom;
+	private int age;
+	
+	
+	public Personne(String nom, String prenom, int age) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.age = age;
+	}
+	
+	
+	public String getNom() {
+		return nom;
+	}
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
+	public int getAge() {
+		return age;
+	}
+
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	
+	public int compareTo(Personne x) { //tri par l'age
+		Integer i = new Integer(this.age); // cette instance marche aussi
+		i.compareTo(x.age);
+		
+		return i;
+	}
+		
+//		Integer p = this.age; 
+//		return p.compareTo(x.age);}
+		
+		
+	
+//public int compareTo(Personne x) { //tri par le nom
+//		
+//		String p = this.nom; 
+//		
+//		//ascending order
+//		return p.compareTo(x.nom);}
+//		
+//		//descending order
+//		//return compareQuantity - this.quantity;
+
+	@Override
+	public String toString() {
+		return "Personne [nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
+	}
+	
+	
+
+}
