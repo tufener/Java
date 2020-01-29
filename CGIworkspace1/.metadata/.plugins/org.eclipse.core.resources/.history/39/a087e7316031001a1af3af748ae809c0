@@ -1,9 +1,0 @@
-package model;
-
-public class Groupe {
-	private String nom;
-	private Personne[] tab = new Personne[10];
-	
-	
-
-}

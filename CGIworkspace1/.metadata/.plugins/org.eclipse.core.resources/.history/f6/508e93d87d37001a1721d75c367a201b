@@ -1,8 +1,0 @@
-package projetTriable;
-
-import java.util.Comparator;
-
-public class ComparePrix implements Comparator<Article> {
-	
-
-}
