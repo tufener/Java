@@ -1,0 +1,48 @@
+package user;
+
+import java.sql.SQLException;
+
+import model.Db;
+
+
+public class Test {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		//select();
+		//selectByNom();
+		update();
+		
+
+	}
+	
+	static void select() throws ClassNotFoundException, SQLException{
+		System.out.println(Db.selectAll());
+	}
+	
+	static void selectByNom() throws ClassNotFoundException, SQLException{
+	System.out.println(Db.selectById(1));
+	
+	}
+
+	static void insertv2() throws ClassNotFoundException, SQLException {
+		Db.insert("Audi", "Vehicule");
+
+	}
+
+	static void update() throws ClassNotFoundException, SQLException {
+		// Traitement
+		int x = 4;
+		String y = "Dell";
+		String z = "PC";
+		Db.update(x,y,z);
+
+	}
+
+	static void delete() throws ClassNotFoundException, SQLException {
+		// Traitement
+		int x = 45;
+		Db.testDelete(x);
+
+	}
+
+}

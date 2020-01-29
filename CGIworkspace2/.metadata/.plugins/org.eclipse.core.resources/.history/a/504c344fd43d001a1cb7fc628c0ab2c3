@@ -1,0 +1,27 @@
+package projetJDBC;
+
+import java.sql.*;
+
+public class Test {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		insert();
+
+	}
+	
+	static void insert() throws ClassNotFoundException, SQLException{
+		Db.insertv2(45, "Malakoff", "Pierette");
+		
+	}
+	
+	static void update() throws ClassNotFoundException, SQLException{
+		Db.update();
+		
+	}
+	
+	static void delete() throws ClassNotFoundException, SQLException{
+		Db.delete();
+		
+	}
+
+}

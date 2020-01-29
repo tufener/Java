@@ -1,0 +1,17 @@
+package user;
+
+import model.Personne;
+
+public class Testmain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		test1();
+
+	}
+
+	static void test1(){
+		Personne p = new Personne("jean", "marc",10);
+		System.out.println(p);
+	}
+}

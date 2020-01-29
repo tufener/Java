@@ -1,0 +1,26 @@
+package model;
+
+public class Ligne {
+	private Article article;
+	private Caddie caddie;
+	private int quantite;
+	private String Article;
+	
+	public Ligne(model.Article article, Caddie caddie, int quantite, String article2) {
+		this.article = article;
+		this.caddie = caddie;
+		this.quantite = quantite;
+		Article = article2;
+	}
+
+	@Override
+	public String toString() {
+		return "Ligne [article=" + article + ", caddie=" + caddie + ", quantite=" + quantite + ", Article=" + Article
+				+ "]";
+	}
+	
+	
+	
+	
+
+}

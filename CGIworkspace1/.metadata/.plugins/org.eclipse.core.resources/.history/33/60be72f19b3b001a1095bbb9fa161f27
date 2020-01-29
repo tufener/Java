@@ -1,0 +1,8 @@
+package projetCollection;
+
+public class Personne {
+	private Sttring nom; 
+	private String prenom; 
+	
+
+}

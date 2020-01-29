@@ -1,0 +1,35 @@
+package projetCommercial;
+
+public class Commercial {
+	
+	
+	private int secuIdentifiant;
+	private String nom;
+	private String prenom; 
+	
+	private Client client;
+	
+
+	public Commercial(int secuIdentifiant, String nom, String prenom, Client client) {
+		this.secuIdentifiant = secuIdentifiant;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.client = client;
+	}
+
+	@Override
+	public String toString() {
+		return "Commercial [secuIdentifiant=" + secuIdentifiant + ", nom=" + nom + ", prenom=" + prenom + ", client="
+				+ client + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

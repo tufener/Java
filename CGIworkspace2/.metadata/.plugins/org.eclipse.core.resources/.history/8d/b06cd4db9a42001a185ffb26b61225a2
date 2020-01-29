@@ -1,0 +1,7 @@
+package projetMaven1;
+
+public class article {
+	private String marque;
+	private int prix; 
+
+}

@@ -1,0 +1,66 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import model.Medicaments;
+import model.Visite;
+
+public class MedicamentsDaoJDBC {
+
+	public ArrayList<Medicaments> selectAll() throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hopital", "root", "root");
+
+		String sql = "SELECT * FROM medicaments";
+		Statement st = conn.createStatement();
+
+		ResultSet rs = st.executeQuery(sql);
+
+		ArrayList<Medicaments> visites = new ArrayList<Medicaments>();
+
+		while (rs.next()) {
+			Medicaments v = new Medicaments();
+			v.setIdMed(rs.getInt(1));
+			v.setNomMed(rs.getString(2));
+			v.setPrix(rs.getInt(3));
+			v.setQuantiteStock(rs.getInt(4));
+
+			visites.add(v);
+		}
+
+		st.close();
+		conn.close();
+		return visites;
+	}
+	
+	public Visite getMedbyId(int idMed) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hopital", "root", "root");
+
+		String sql = "select * from medicaments where id_med=" + idMed ;
+		Statement st = conn.createStatement();
+
+		ResultSet rs = st.executeQuery(sql);
+		Visite v = new Visite();
+		
+		while (rs.next()) {
+			v.setIdVisite(rs.getInt(1));
+			v.setIdPatient(rs.getInt(2));
+			v.setDate(rs.getString(3));
+			v.setNumSalle(rs.getInt(4));
+			v.setMedecin(rs.getInt(5));
+			v.setTarif(rs.getInt(6));
+			v.setOrdonnance(rs.getString(7));
+		}
+
+		st.close();
+		conn.close();
+		return v;
+	}
+
+}

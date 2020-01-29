@@ -1,0 +1,21 @@
+package projetCommercial;
+
+public class Client {
+	private String nom; 
+	private int nbSalarie;
+	
+	private EPole epole;
+	
+	
+	
+	
+	public Client(EPole epole, String nom, int nbSalarie) {
+		this.epole = epole;
+		this.nom = nom;
+		this.nbSalarie = nbSalarie;
+	}
+	
+	
+	
+
+}

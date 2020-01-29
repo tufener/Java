@@ -1,0 +1,19 @@
+INDEX VERSION 1.131+C:\Users\utilisateur\Desktop\CGIworkspace2\.metadata\.plugins\org.eclipse.jdt.core
+1272411154.index
+3016478792.index
+1729057003.index
+1404570243.index
+3951324721.index
+3772362205.index
+798861683.index
+718387003.index
+2102636001.index
+3400620857.index
+1559693888.index
+1265364500.index
+2588780094.index
+2897223455.index
+712414149.index
+853216398.index
+2880633747.index
+2270960911.index

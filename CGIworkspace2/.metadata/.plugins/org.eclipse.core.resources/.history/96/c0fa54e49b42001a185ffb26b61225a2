@@ -1,0 +1,16 @@
+package projetMaven1;
+
+public class Article {
+	private String marque;
+	private int prix;
+	
+	
+	public Article(String marque, int prix) {
+		super();
+		this.marque = marque;
+		this.prix = prix;
+	} 
+	
+	
+
+}

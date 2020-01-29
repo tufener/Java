@@ -1,0 +1,36 @@
+package model;
+
+import java.io.Serializable;
+import java.util.LinkedList;
+
+public class FileAttente implements Serializable {
+	private LinkedList<Patient> file;
+
+	public FileAttente() {
+	}
+
+	public FileAttente(LinkedList<Patient> file) {
+		this.file = file;
+	}
+
+	public void add(Patient p) {
+		this.file.add(p);
+	}
+
+	public void clear() {
+		this.file.clear();
+	}
+
+	public void print() {
+		this.file.forEach((n) -> System.out.println(n));
+	}
+
+	public boolean isEmpty() {
+		return this.file.isEmpty();
+	}
+
+	public Patient poll() {
+		return this.file.poll();
+	}
+
+}

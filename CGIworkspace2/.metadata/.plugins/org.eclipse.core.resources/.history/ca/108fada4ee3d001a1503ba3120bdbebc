@@ -1,0 +1,84 @@
+package model;
+
+import java.sql.*;
+
+public class Db {
+	
+	public static String selectAll()  throws ClassNotFoundException, SQLException{
+		String res = "ID\tNOM\tDESCRIPTION\n";
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/newdbarticles", "root", "root");
+
+		String sql = "select * from articles";
+		Statement st = conn.createStatement();
+		// System.out.println(sql);
+		ResultSet rs = st.executeQuery(sql);
+		while (rs.next()) {
+			res += rs.getInt("id") + "\t";
+			res += rs.getString("marque") + "\t";
+			res += rs.getString("description") + "\n";
+
+		}
+
+		st.close();
+		conn.close();
+		return res;
+
+	}
+
+	public static int selectById(int idSaisie) {
+		String res = "ID\tMARQUE\tDESCRIPTION\n";
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/newdbarticles", "root", "root");
+
+		String sql = "select * from articles where id LIKE '%" +  idSaisie + "%' ";
+		Statement st = conn.createStatement();
+		// System.out.println(sql);
+		ResultSet rs = st.executeQuery(sql);
+		while (rs.next()) {
+			res += rs.getInt("id") + "\t";
+			res += rs.getString("nom") + "\t";
+			res += rs.getString("prenom") + "\n";
+
+		}
+
+		st.close();
+		conn.close();
+		return res;
+
+	}
+
+	public static void insert(String marque, String Description) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/newdbarticles", "root", "root");
+
+		String sql = "insert into articles values(?, ?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, marque);
+		ps.setString(2, Description);
+
+		ps.executeUpdate();
+
+		conn.close();
+
+	}
+
+	public static void update()  throws ClassNotFoundException, SQLException  {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/newdbarticles", "root", "root");
+
+		String sql = "update personnes set nom= '" + nom + "', prenom= '" + prenom + "' where id = " + id;
+		Statement st = conn.createStatement();
+		st.executeUpdate(sql);
+
+		conn.close();
+	
+
+	}
+
+	public static void delete()  throws ClassNotFoundException, SQLException  {
+
+	}
+
+}

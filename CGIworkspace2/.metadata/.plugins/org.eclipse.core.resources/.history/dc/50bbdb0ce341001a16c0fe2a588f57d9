@@ -1,0 +1,7 @@
+package dao;
+
+import model.Patient;
+
+public interface MedicamentsDao extends Dao<Medicaments, Integer>{
+
+}

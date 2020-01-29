@@ -1,0 +1,50 @@
+package tpTableau;
+
+import java.util.Scanner;
+
+public class TpTableau {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		testDoubleTableauv2();
+
+	}
+
+	static void tpTableauJacky() {
+		Scanner clavier = new Scanner(System.in);
+		System.out.print("Veuillez saisir la taille du tableau (de chaine) souhaitée: ");
+		int taille = clavier.nextInt();
+
+		String[] Tab = new String[taille];
+
+		Scanner clavierStr = new Scanner(System.in);
+		for (int i = 0; i < Tab.length; i++) {
+			System.out.print("Veuillez saisir l'élément n°" + (i + 1) + " du tableau:");
+
+			Tab[i] = clavierStr.nextLine();
+
+		}
+
+		System.out.println("Voici un affichage du tableau demandé: ");
+		for (int i = 0; i < Tab.length; i++) // on peut aussi écrire ==>
+												// for(String e:Tab)<== --> à la
+												// ligne Sysoutprintln(e)
+			System.out.println("element " + (i + 1) + " : " + Tab[i]);
+
+	}
+
+	static void testDoubleTableauv2() {
+		int[] tab1 = { 10, 20, 30, 40 };
+		afficheTableau(tab1); // 10 20 30 40
+		int[] tab2 = doubleTableau(tab1);
+		afficheTableau(tab2); // 20 40 60 80
+	}
+
+	static int[] doubleTableau(int[] x) {
+		int[] y = new int[x.length];
+		for (int i = 0; i < x.length; i++)
+			y[i] = x[i] * 2;
+		return y;
+	}
+
+}

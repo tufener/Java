@@ -1,0 +1,12 @@
+package projetMaven1;
+
+ public class Test {
+
+	public static void main(String[] args) {
+		Article a = new Article("renault", 15000);
+		System.out.println(a);
+		
+	}
+	
+
+}

@@ -1,0 +1,26 @@
+package projetException;
+
+import java.util.Scanner;
+
+public class Traitement {
+
+	public static int div(int a, int b) {
+		if (b == 0) {
+			// ce que fait la jvm (IMPLICITEMENT) en cas de division par zero
+			ArithmeticException x = new ArithmeticException("/ by zero dans la méthode div");
+			throw x;
+		}
+
+		return a / b;
+	}
+
+	public static int calcul(int a, int b) {
+		if (b == 0) {
+			// ce que fait la jvm (IMPLICITEMENT) en cas de division par zero
+			ArithmeticException x = new ArithmeticException("/ by zero dans la méthode calcul");
+			throw x;
+		}
+		return a / b;
+	}
+
+}

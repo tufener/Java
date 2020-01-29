@@ -1,0 +1,144 @@
+package projetJDBC;
+
+import java.sql.*;
+
+public class Db {
+	
+	static String select() throws ClassNotFoundException, SQLException{
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root", "root");
+
+		String sql = "select * from personnes";
+		Statement st = conn.createStatement();
+		// System.out.println(sql);
+		ResultSet rs = st.executeQuery(sql);
+		System.out.println("ID\tNOM\tPRENOM");
+		while(rs.next()){
+			System.out.println(rs.getInt("id") + "\t" + rs.getString("nom") + "\t" + rs.getString("prenom"));
+			
+		}
+
+		st.close();
+		conn.close();
+		
+	}
+
+	static void insert() throws ClassNotFoundException, SQLException { // partie
+		// Traitement
+		int x = 25;
+		String y = "Sachore";
+		String z = "Emmanuel";
+		testInsert(x, y, z);
+
+	}
+
+	static void testInsert(int id, String nom, String prenom) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root", "root");
+
+		String sql = "insert into personnes values(" + id + ", '" + nom + "', '" + prenom + "')";
+		Statement st = conn.createStatement();
+		// System.out.println(sql);
+		st.executeUpdate(sql);
+
+		conn.close();
+	}
+
+	static void testInsertv2(int id, String nom, String prenom) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root", "root");
+
+		String sql = "insert into personnes values(? , ?, ?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, id);
+		ps.setString(2, nom);
+		ps.setString(3, prenom);
+
+		ps.executeUpdate();
+
+		conn.close();
+	}
+
+	// static void testInsert() throws ClassNotFoundException, SQLException {
+	// Class.forName("com.mysql.jdbc.Driver");
+	// Connection conn =
+	// DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root",
+	// "root");
+	//
+	// String sql = "insert into personnes values(12, 'Aro', 'Ciro')";
+	// Statement st = conn.createStatement();
+	// st.executeUpdate(sql);
+	//
+	// conn.close();
+	// }
+
+	
+
+	static void testUpdate(int id, String nom, String prenom) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root", "root");
+
+		String sql = "update personnes set nom= '" + nom + "', prenom= '" + prenom + "' where id = " + id;
+		Statement st = conn.createStatement();
+		st.executeUpdate(sql);
+
+		conn.close();
+	}
+
+	// static void testUpdate() throws ClassNotFoundException, SQLException {
+	// Class.forName("com.mysql.jdbc.Driver");
+	// Connection conn =
+	// DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root",
+	// "root");
+	//
+	// String sql = "update personnes set nom = 'Palo' , prenom = 'Gilo' where
+	// id = 10 ";
+	// Statement st = conn.createStatement();
+	// st.executeUpdate(sql);
+	//
+	// conn.close();
+	// }
+
+
+
+	static void testDelete(int id) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root", "root");
+
+		String sql = "delete from personnes where id = " + id;
+		Statement st = conn.createStatement();
+		int compt = st.executeUpdate(sql); // on crée une condition car lorsque
+		// nous refaisons delete on a pas
+		// d'erreur comparé aux autres
+		// méthodes où ils nous renvoyaient
+		// une erreur
+		if (compt != 0)
+			System.out.println("Ok");
+		else
+			System.out.println("Ko");
+
+		conn.close();
+	}
+
+	// static void testDelete() throws ClassNotFoundException, SQLException {
+	// Class.forName("com.mysql.jdbc.Driver");
+	// Connection conn =
+	// DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root",
+	// "root");
+	//
+	// String sql = "delete from personnes where id = 10 ";
+	// Statement st = conn.createStatement();
+	// int compt = st.executeUpdate(sql); // on crée une condition car lorsque
+	//// nous refaisons delete on a pas
+	//// d'erreur comparé aux autres
+	//// méthodes où ils nous renvoyaient
+	//// une erreur
+	// if (compt != 0)
+	// System.out.println("Ok");
+	// else
+	// System.out.println("Ko");
+	//
+	// conn.close();
+	// }
+
+}

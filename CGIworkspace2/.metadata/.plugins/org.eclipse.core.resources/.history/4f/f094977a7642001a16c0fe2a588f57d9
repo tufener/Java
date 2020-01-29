@@ -1,0 +1,60 @@
+package model;
+
+public class Medicaments {
+	private int idMed;
+	private String nomMed;
+	private int prix; 
+	private int quantiteStock;
+	
+	
+	public Medicaments(int idMed, String nomMed, int prix, int quantiteStock) {
+		super();
+		this.idMed = idMed;
+		this.nomMed = nomMed;
+		this.prix = prix;
+		this.quantiteStock = quantiteStock;
+	}
+	
+	
+	public Medicaments() {
+		super();
+	}
+	
+	
+	public int getIdMed() {
+		return idMed;
+	}
+	public void setIdMed(int idMed) {
+		this.idMed = idMed;
+	}
+	public String getNomMed() {
+		return nomMed;
+	}
+	public void setNomMed(String nomMed) {
+		this.nomMed = nomMed;
+	}
+	public int getPrix() {
+		return prix;
+	}
+	public void setPrix(int prix) {
+		this.prix = prix;
+	}
+	public int getQuantiteStock() {
+		return quantiteStock;
+	}
+	public void setQuantiteStock(int quantiteStock) {
+		this.quantiteStock = quantiteStock;
+	}
+
+
+	@Override
+	public String toString() {
+		return "IdMedicaments= " + idMed + ", nom du médicaments=" + nomMed + ", prix=" + prix + ", quantite du stock= "
+				+ quantiteStock;
+	}
+	
+	
+	
+	
+
+}

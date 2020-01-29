@@ -1,0 +1,5 @@
+package projetJDBC;
+
+public class Db {
+
+}

@@ -1,0 +1,19 @@
+package projetTriable;
+
+public class Article {
+	private String marque; 
+	private int prix;
+	
+	
+	public Article(String marque, int prix) {
+		this.marque = marque;
+		this.prix = prix;
+	}
+	@Override
+	public String toString() {
+		return "Article [marque=" + marque + ", prix=" + prix + "]";
+	} 
+	
+	
+
+}

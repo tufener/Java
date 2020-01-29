@@ -1,0 +1,17 @@
+package projetCollection;
+
+public class Personne {
+	private Sttring nom; 
+	private String prenom;
+	
+	
+	public Personne(Sttring nom, String prenom) {
+		this.nom = nom;
+		this.prenom = prenom;
+	} 
+	
+	
+	
+	
+
+}

@@ -1,0 +1,6 @@
+package projetTriable;
+
+public class CompareMarque implements Compararot<Article> {
+	
+
+}

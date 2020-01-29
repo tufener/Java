@@ -1,0 +1,29 @@
+package essaieHasret;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		testTableauInverse();
+
+	}
+	
+	static String[] testTableauInverse(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Veuillez saisir une phrase dans la console ");
+		String separation = " ";
+		String str = sc.nextLine();
+		String[] tab = str.split(separation);
+//		for(String s : tab)
+//			System.out.println(s);
+		String[] tab2 = new String[tab.length];
+		for (int i = 0; i < tab.length; i++) {
+			tab2[tab2.length - i - 1] = tab[i];
+//			System.out.println(tab2);
+	}
+		return tab2;
+		
+
+	}
+}

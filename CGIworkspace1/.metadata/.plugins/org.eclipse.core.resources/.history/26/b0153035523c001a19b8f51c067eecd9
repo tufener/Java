@@ -1,0 +1,12 @@
+package projetCommercial;
+
+public class Client {
+	private EPole epole;
+	
+	private String nom; 
+	private int nbSalarie;
+	
+	
+	
+
+}

@@ -1,0 +1,9 @@
+package projetCommercial;
+
+public enum EPole {
+	Auto, Banque, Assurance; 
+	
+	
+	
+
+}

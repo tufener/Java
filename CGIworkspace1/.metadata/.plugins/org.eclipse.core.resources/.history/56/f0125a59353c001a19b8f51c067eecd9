@@ -1,0 +1,20 @@
+package model;
+
+public class Boisson extends Article{
+	private EBoisson eboisson;
+
+	public Boisson(String nom, int prix) {
+		super(nom, prix);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Boisson: " + eboisson.name() + "Volume: " + eboisson.getVolume() ;
+	}
+	
+	
+	
+	
+
+}

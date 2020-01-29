@@ -1,0 +1,29 @@
+package projetMaven1;
+
+public class Article {
+	private String marque;
+	private int prix;
+	private String codeBarre;
+	
+	
+	public Article(String marque, int prix, String codeBarre) {
+		super();
+		this.marque = marque;
+		this.prix = prix;
+		this.codeBarre = codeBarre;
+	}
+
+
+	public Article() {
+		super();
+	}
+
+
+	@Override
+	public String toString() {
+		return "Article [marque=" + marque + ", prix=" + prix + "]";
+	} 
+	
+	
+
+}

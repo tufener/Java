@@ -1,0 +1,25 @@
+package model;
+
+public class Caddie {
+	private Ligne ligne;
+	private String client;
+	
+	
+	public Caddie(Ligne ligne, String client) {
+		this.ligne = ligne;
+		this.client = client;
+	}
+
+	@Override
+	public String toString() {
+		return "Caddie [ligne=" + ligne + ", client=" + client + "]";
+	}
+	
+	public void ajouter(int quantite, String Article){
+		this.ligne.setQuantite() = quantite;
+		
+	}
+	
+	
+
+}

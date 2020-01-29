@@ -1,0 +1,18 @@
+package user;
+
+import java.sql.SQLException;
+
+import projetJDBC.Db;
+
+public class Test {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+
+	}
+	
+	static void select() throws ClassNotFoundException, SQLException{
+		System.out.println(Db.selectAll());
+	}
+
+}

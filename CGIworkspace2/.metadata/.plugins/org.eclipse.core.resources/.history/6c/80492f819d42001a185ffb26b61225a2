@@ -1,0 +1,10 @@
+package projetMaven2;
+
+public class TestMaven2 {
+
+	public static void main(String[] args) {
+		System.out.println("Je suis Maven 2");
+
+	}
+
+}

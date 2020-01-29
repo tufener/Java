@@ -1,0 +1,33 @@
+package user;
+
+import model.Boisson;
+import model.EBoisson;
+import model.EGateau;
+import model.Gateau;
+import model.Ligne;
+
+public class Test {
+
+	public static void main(String[] args) {
+		int result = 0;
+		for (int i = 0; i < 5; i++) {
+		  if (i == 3) { 
+		     result += 10;
+		   } else {
+		     result += i;
+		   }	
+		}
+		System.out.println(result);
+
+	}
+	
+	static void test1(){
+		Boisson b = new Boisson("coca", 2, EBoisson.petit);
+		System.out.println(b);
+		Gateau g = new Gateau("cadir", 1,EGateau.choco);
+		Ligne L1 = new Ligne("Jean" , )
+		
+		
+	}
+
+}

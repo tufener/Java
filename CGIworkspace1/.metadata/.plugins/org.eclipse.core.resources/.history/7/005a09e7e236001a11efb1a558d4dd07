@@ -1,0 +1,29 @@
+package projetTriable;
+
+public class Test {
+
+	public static void main(String[] args) {
+		testInt();
+
+	}
+	
+	static void testInt(){
+		int[] tab = {2,1,6,5,9,8};
+		
+	}
+	
+	static void affiche(int[] tab){
+		for(int e : tab)
+			System.out.println(e + "\t");
+		System.out.println();
+		
+	}
+	
+	static void affiche(String[] tab){
+		for(int e : tab)
+			System.out.println(e + "\t");
+		System.out.println();
+		
+	}
+
+}

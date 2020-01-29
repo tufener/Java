@@ -1,0 +1,43 @@
+package projetException;
+
+import java.util.Scanner;
+
+public class Traitement {
+
+	public static int div(int a, int b) {
+		if (b == 0) {
+			// ce que fait la jvm (IMPLICITEMENT) en cas de division par zero
+			// ArithmeticException x = new ArithmeticException("dans la méthode
+			// div");
+			// throw x;
+			throw new ArithmeticException("dans la méthode div");
+		}
+
+		return a / b;
+	}
+
+	public static int div2(int a, int b) throws Exception { // Exception surveillé 
+		if (b == 0) {
+			// ce que fait la jvm (IMPLICITEMENT) en cas de division par zero
+			Exception x = new Exception("dans la méthode div2");
+			throw x;
+		}
+
+		return a / b;
+	}
+
+	public static int mult(int a, int b) {
+
+		return a * b;
+	}
+
+	public static int calcul(int a, int b) {
+		if (b == 0) {
+			// ce que fait la jvm (IMPLICITEMENT) en cas de division par zero
+			ArithmeticException x = new ArithmeticException("/ by zero dans la méthode calcul");
+			throw x;
+		}
+		return a / b;
+	}
+
+}

@@ -1,0 +1,13 @@
+package model;
+
+public class Boisson extends Article{
+	private Eboison eboisson;
+
+	public Boisson(String nom, int prix) {
+		super(nom, prix);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+}
