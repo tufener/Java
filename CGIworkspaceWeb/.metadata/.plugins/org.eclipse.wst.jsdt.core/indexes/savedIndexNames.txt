@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\utilisateur\Desktop\Java\Java\CGIworkspaceWeb\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3353681662.index
+2787051003.index
+4111049866.index
+845303695.index
+3987678189.index
+2189155225.index
