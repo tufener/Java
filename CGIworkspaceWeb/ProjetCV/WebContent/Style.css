@@ -1,0 +1,26 @@
+@charset "ISO-8859-1";
+/* body {
+  background-color: powderblue;
+} */
+h.CV {
+  color: #183de7;
+}
+p.CV {
+  color: #9ca893;
+  
+}
+
+#h01{
+	color : #0d7371;
+}
+td {
+	padding: 25px;
+}
+
+.toto{
+	color : grey;
+}
+
+p.titi{
+	color : brown; 
+}
