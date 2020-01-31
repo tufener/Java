@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="projetJs">
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <property name="context-root" value="projetJs"/>
+    </wb-module>
+</project-modules>
