@@ -13,7 +13,7 @@
 //    alert("Bonjour " + inputVal);
 //}
 
-function myFunction() { 
+function getInputValue() { 
     var x =  
         document.getElementById("myText").value; 
     

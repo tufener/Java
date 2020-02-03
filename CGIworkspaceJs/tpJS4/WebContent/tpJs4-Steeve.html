@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TP JS 4</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="tpJs4-Steeve.js"></script>
+</head>
+<body>
+</head>
+<body>
+	<div class="container">
+		<h2>TP JavaScript 4</h2>
+		<form>
+			<div class="form-group">
+				<label for="usr">Article à ajouter:</label> <input type="text"
+					class="form-control" id="saisie">
+			</div>
+			<button type="button" class="btn" onclick="alimente()"
+				id="alimenteur">Alimenter le tableau</button>
+			<button type="button" class="btn" onclick="sort()"
+				id="trier">Trier le tableau</button>
+			<button type="button" class="btn" onclick="print()"
+				id="afficher">Afficher le tableau</button>
+			<p class="text" id="test"></p>
+		</form>
+
+		<table id="table" class="table table-striped">
+			<thead>
+				<tr>
+					<th>n°</th>
+					<th>article</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
