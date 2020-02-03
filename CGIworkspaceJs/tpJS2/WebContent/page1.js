@@ -5,9 +5,9 @@ function getInputValue() {
 
 	if (z >= 0 && z <= 18)
 		status = "mineur";
-	else if (z >= 18 && z <= 50)
+	else if (z > 18 && z <= 50)
 		status = "majeur";
-	else if (z >= 50 && z <= 120)
+	else if (z > 50 && z <= 120)
 		status = "senior";
 	else
 		status = "erreur de saisie";
