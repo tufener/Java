@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<script src="commandeExe.js"></script>
+<head>
+<title>Commande</title>
+
+<!-- <link rel="stylesheet"
+	href="bootstrap/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="bootstrap/js/bootstrap.min.js"></script> -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h2>JavaScript Arrays</h2>
+
+		<p>The best way to loop through an array is using a standard for
+			loop:</p>
+
+		<div class="form-check">
+			<input type="radio" id="gender" value="male" class="form-check-input">Mr<br>
+			<input type="radio" id="gender" value="female"
+				class="form-check-input">Mme<br>
+		</div>
+
+		<div class="form-group">
+			<input type="text" id="clientInfo"
+				placeholder="Client Name and Firstname..." class="form-control">
+		</div>
+
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="checkbox" value="" id="prixTotal" onclick="Detail()">Detail
+		</div>
+		
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="checkbox" value="" id="prixtot"
+				onclick="prix()">Facture
+		</div>
+
+		<form class="form-inline">
+			Article: <select class="custom-select my-1 mr-sm-2"
+				id="ArticleChoice">
+				<option selected>Choose your article...</option>
+				<option value="2">Coca</option>
+				<option value="3">Pepsi</option>
+				<option value="4">Fanta</option>
+				<option value="2">Tropico</option>
+				<option value="1">Eau</option>
+				<option value="2">Oasis</option>
+			</select>
+		</form>
+
+		<div class="form-group row">
+			Quantity: <input type="number" id="quantity" min="1" max="50"
+				class="form-control">
+		</div>
+
+		<button type="button" onclick="add()" class="btn btn-primary">Add</button>
+		<button type="button" onclick="print()" class="btn btn-primary">Print</button>
+
+
+		<p id="resultDetail"></p>
+		<p id="resultPrixTotal"></p>
+
+	</div>
+</body>
+</html>

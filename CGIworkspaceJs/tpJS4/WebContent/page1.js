@@ -5,7 +5,7 @@ var tab = [];
 
 function add() {
 	tab.push(document.getElementById("txt").value);
-	document.getElementById("addp").innerHTML = tab;
+	
 }
 
 function sort() {
@@ -15,7 +15,7 @@ function sort() {
 }
 
 function print() {
-	var tab, text, fLen, i;
+	var text, fLen, i;
 	var fLen = tab.length;
 
 	text = "<table><thead><tr><th>Position</th><th>Ajout</th></tr></thead>";

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Calculatrice
+</title>
+</head>
+<body>
+
+<h1> Calculatrice </h1>
+<HR>
+
+<span> Nombre 1 :  <span/> <input type="text" id="nb1" ></input>
+</br>
+<span> Nombre 2 :  <span/> <input type="text" id="nb2" ></input>
+
+</br>
+</br>
+
+<button type="button"  onclick="document.getElementById('resultat').innerHTML=calcul(document.getElementById('nb1').value,document.getElementById('nb2').value,'+')" >+</button>
+<button type="button"  onclick="document.getElementById('resultat').innerHTML=calcul(document.getElementById('nb1').value,document.getElementById('nb2').value,'-')" >-</button>
+<button type="button"  onclick="document.getElementById('resultat').innerHTML=calcul(document.getElementById('nb1').value,document.getElementById('nb2').value,'*')">*</button>
+<button type="button"  onclick="document.getElementById('resultat').innerHTML=calcul(document.getElementById('nb1').value,document.getElementById('nb2').value,'/')" >/</button>
+
+<HR>
+<span>Résultat : </span>
+<span id="resultat" style="text-decoration: blink;color :red;"></span></blink>
+
+
+<script src="calculette.js">
+</script>
+
+</body>
+
+</html>

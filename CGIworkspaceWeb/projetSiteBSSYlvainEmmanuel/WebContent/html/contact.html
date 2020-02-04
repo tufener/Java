@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand"> <img src="../images/terre.jpg" style ="width:35px; height:35px;" ></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="page1.html">Home</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+        <li><a href="Solutions.html">Solutions</a></li>
+        <li class="active"> <a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br> <br>
+<div class="container">
+  <h2>Pour nous contatcter : </h2>
+  <h3>Passer par le formulaire suivant</h3>
+  <form>
+   <div>
+<p> A quel service souhaitez vous adresser votre demande</p>
+<label class="radio-inline"><input type="radio" name="optradio" checked>Service administratif</label>
+<label class="radio-inline"><input type="radio" name="optradio">Service commercial</label>
+<label class="radio-inline"><input type="radio" name="optradio">Service Scientifique</label>
+</div>
+    <div class="form-group">
+      <label for="usr">Nom :</label>
+      <input type="text" class="form-control" id="usr">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Prenom :</label>
+      <input type="password" class="form-control" id="pwd">
+    </div>
+    
+    <div class="form-group">
+      <label for="pwd">Email :</label>
+      <input type="password" class="form-control" id="pwd">
+    </div>
+    
+    <div class="form-group">
+  <label for="comment">Objet de votre demande:</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
+
+  </form>
+</div>
+<footer class="container text-center">
+  <p>Adresse : 85 rue de la pollution 1236547 Chimie, France. Téléphone : 02-25-23-26-14</p>
+  
+  <img src="../images/facebook.svg" style="width:2%; heigth: 2%;">
+  <img src="../images/linkedin.svg" style="width:2%; heigth: 2%;">
+  <img src="../images/twitter.svg" style="width:2%; heigth: 2%;">
+</footer>
+</body>
+</html>

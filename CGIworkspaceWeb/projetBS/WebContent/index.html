@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projet Bootstrap</title>
+<meta name="description" content="">
+<meta name="author" content="templatemo">
+
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700'
+	rel='stylesheet' type='text/css'>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/templatemo-style.css" rel="stylesheet">
+
+</head>
+
+<body class="templatemo-container">
+	<!-- header -->
+	<div class="header-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-4 col-sm-4 site-name-container">
+					<h1 class="site-name">Weird Guys</h1>
+				</div>
+				<div class="mobile-menu-icon">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="col-lg-9 col-md-8 col-sm-8 templatemo-nav-container">
+					<nav class="templatemo-nav">
+						<ul>
+							<li><a href="index.html" class="active">Home</a></li>
+							<li><a href="page1.html">Rencontres</a></li>
+							<li><a href="page3.html">Matching</a></li>
+							<li><a href="page2.html">Inscription</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+	<!-- header image -->
+	
+	<div class="header-img">
+	</div>
+	<!-- end header image -->
+	<!-- Welcome message -->
+	
+	<div class="welcome-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-11">
+					<div class="welcome-wrapper">
+						<h2 class="welcome-title text-uppercase">BIENVENUE</h2>
+						<img src="img/welcome-divider-lines.png" alt="Welcome divider"
+							class="welcome-divider-lines-img">
+						<p class="welcome-description">Venez rencontrer les beaux gosses des environs. <br />Site 100% fiable et certifié UCPPAX-8574</p>
+
+					</div>
+				</div>
+					<div class="col-lg-1">
+					<div class="welcome-wrapper">
+						<img alt="medaille" src="img/med.png" width="70">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- JS -->
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="js/responsiveCarousel.min.js"></script>
+	<!-- Carousel -->
+	<script type="text/javascript" src="js/templatemo-script.js"></script>
+	<!-- Templatemo Script -->
+	<script>
+		$(function() {
+			$('.crsl-items').carousel({
+				visible : 1,
+				itemMinWidth : 320,
+				itemEqualHeight : 320,
+				itemMargin : 9,
+			});
+			$(".crsl-nav a[href=#]").on('click', function(e) {
+				e.preventDefault();
+			});
+		});
+	</script>
+</body>
+</html>

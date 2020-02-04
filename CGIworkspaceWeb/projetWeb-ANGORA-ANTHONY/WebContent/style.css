@@ -1,0 +1,23 @@
+/* On travaille sur la balise body, donc sur TOUTE la page */
+body {
+	background-color: #FCF3D1;
+}
+
+.pop {
+	top: 20%;
+	text-align: center;
+	margin: 10%;
+	color: red;
+	font-size: 100px;
+}
+
+.img {
+	border-radius: 50%;
+	width: "200";
+	height: "150";
+}
+
+.tes {
+	text-align: center;
+	padding: 10px 20px;
+}

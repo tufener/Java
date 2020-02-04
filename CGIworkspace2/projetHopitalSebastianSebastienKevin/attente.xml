@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_77" class="java.beans.XMLDecoder">
+ <object class="java.util.LinkedList">
+  <void method="add">
+   <object class="model.Patient">
+    <void property="id">
+     <int>1</int>
+    </void>
+    <void property="nom">
+     <string>melloul</string>
+    </void>
+    <void property="prenom">
+     <string>jacky</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.Patient">
+    <void property="id">
+     <int>2</int>
+    </void>
+    <void property="nom">
+     <string>nom2</string>
+    </void>
+    <void property="prenom">
+     <string>pr2</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.Patient">
+    <void property="id">
+     <int>3</int>
+    </void>
+    <void property="nom">
+     <string>aaa</string>
+    </void>
+    <void property="prenom">
+     <string>vvv</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.Patient">
+    <void property="id">
+     <int>4</int>
+    </void>
+    <void property="nom">
+     <string>n4</string>
+    </void>
+    <void property="prenom">
+     <string>p4</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.Patient">
+    <void property="id">
+     <int>5</int>
+    </void>
+    <void property="nom">
+     <string>n4</string>
+    </void>
+    <void property="prenom">
+     <string>p5</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.Patient">
+    <void property="id">
+     <int>6</int>
+    </void>
+    <void property="nom">
+     <string>n6</string>
+    </void>
+    <void property="prenom">
+     <string>p6</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.Patient">
+    <void property="complement">
+     <string>Je répète : Robert est le 6e du nom!</string>
+    </void>
+    <void property="id">
+     <int>12</int>
+    </void>
+    <void property="nom">
+     <string>Robert</string>
+    </void>
+    <void property="prenom">
+     <string>VI</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.Patient">
+    <void property="id">
+     <int>7</int>
+    </void>
+    <void property="nom">
+     <string>n7</string>
+    </void>
+    <void property="prenom">
+     <string>p7</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.Patient">
+    <void property="id">
+     <int>8</int>
+    </void>
+    <void property="nom">
+     <string>n8</string>
+    </void>
+    <void property="prenom">
+     <string>p4</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

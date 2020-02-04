@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projet Bootstrap</title>
+<meta name="description" content="">
+<meta name="author" content="templatemo">
+
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700'
+	rel='stylesheet' type='text/css'>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<section class="templatemo-container section-shadow-bottom">
+		<div class="container">
+			<div class="row section-title-container">
+				<div class="col-lg-12 text-uppercase text-center">
+					<a href="index.html"><img alt="" src="img/arrow.png"
+						class="arrow-back"></a>
+
+					<h2 class="section-title">Rencontres</h2>
+					<div class="section-title-underline-blue"></div>
+					<hr class="section-title-underline">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<h3 class="section-title-2 text-uppercase font-weight-300">
+						<b>Jean</b> <span class="blue-text">René</span>
+					</h3>
+					<p>
+						Credit goes to <a href="http://unsplash.com">Unsplash</a> for
+						images used in this template. Morbi dapibus rhoncus nulla ac
+						tempus. Integer felis lorem, fermentum quis nisl accumsan, gravida
+						gravida est. Cras ultrices rhoncus dui ut laoreet. Fusce
+						tincidunt, urna a imperdiet tempor, orci dolor dictum elit, sit
+						amet malesuada mauris magna eget dolor. Morbi ornare convallis
+						vulputate. Donec ut suscipit nisl, ac elementum nisi.
+					</p>
+					<ul class="gray-text ul-1">
+						<li>Sed non mauris vitae erat consequat auctor</li>
+						<li>Class aptent taciti sociosqu</li>
+						<li>Wonubia nostra, per inceptos himeos</li>
+					</ul>
+					<a class="btn-blue-gradient" data-toggle="collapse"
+						href="#collapseExample" role="button" aria-expanded="false"
+						aria-controls="collapseExample">Matcher </a> <a href="#"
+						class="btn-transparent white">Refuser</a>
+					<div class="collapse" id="collapseExample">
+						<div class="card card-body">Anim pariatur cliche
+							reprehenderit, enim eiusmod high life accusamus terry richardson
+							ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes
+							anderson cred nesciunt sapiente ea proident.</div>
+					</div>
+				</div>
+
+
+				<div class="col-lg-6 col-md-6">
+					<div class="carousel-container">
+						<div class="crsl-items" data-navigation="navbtns">
+							<div class="crsl-wrap">
+								<figure class="crsl-item">
+									<img src="img/h.jpg" alt="Image"
+										class="img-responsive img-thumbnail">
+								</figure>
+								<figure class="crsl-item">
+									<img src="img/d.jpg" alt="Image"
+										class="img-responsive img-thumbnail">
+								</figure>
+								<figure class="crsl-item">
+									<img src="img/e.jpg" alt="Image"
+										class="img-responsive img-thumbnail">
+								</figure>
+							</div>
+						</div>
+					</div>
+					<!-- carousel-container -->
+					<div id="navbtns" class="crsl-nav">
+						<a href="#" class="previous"> <img
+							src="img/carousel-arrow-previous.png" alt="previous">
+						</a> <a href="#" class="next"> <img
+							src="img/carousel-arrow-next.png" alt="next">
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- end section content -->
+		</div>
+	</section>
+
+	<!-- JS -->
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="js/responsiveCarousel.min.js"></script>
+	<!-- Carousel -->
+	<script type="text/javascript" src="js/templatemo-script.js"></script>
+	<!-- Templatemo Script -->
+	<script>
+		$(function() {
+			$('.crsl-items').carousel({
+				visible : 1,
+				itemMinWidth : 320,
+				itemEqualHeight : 320,
+				itemMargin : 9,
+			});
+			$(".crsl-nav a[href=#]").on('click', function(e) {
+				e.preventDefault();
+			});
+		});
+	</script>
+</body>
+</html>
