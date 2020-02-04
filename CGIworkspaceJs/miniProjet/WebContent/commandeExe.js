@@ -1,4 +1,4 @@
-commandes = [];
+var commandes = [];
 
 function commande(quantity, article, prixArticle, prixTotal) {
 	this.quantity = quantity;
@@ -27,13 +27,13 @@ function print() {
 	text = "<table><thead><tr><th>Quantite</th><th>Article</th><th>Prix Unitaire</th><th>Prix Total</th></tr></thead>";
 	for (var i = 0; i < cLen; i++) {
 		text += "<tbody>" + "<tr>" + "<td>" + commandes[i].quantity + "</td>"
-				+ "<td>" + commandes[i].article + "</td>" + "<td>"
-				+ commandes[i].prixArticle + "</td>" + "<td>"
+				"<td>" + commandes[i].article + "</td>" + "<td>"
+				+ commandes[i].prixArticle + "</td>"  + "<td>"
 				+ commandes[i].prixTotal + "</td>" + "</tr>" + "</tbody>";
 	}
 	text += "</table>";
 
-	document.getElementById("result").innerHTML = text;
+	document.getElementById("resultDetail").innerHTML = text;
 }
 
 function Detail() {
