@@ -1,4 +1,6 @@
-var commandes = [];
+var commandes, gender, clientInfo, cLen, check;
+commandes = [];
+cLen = commandes.length;
 
 function commande(quantity, article, prixArticle, prixTotal) {
 	this.quantity = quantity;
@@ -18,73 +20,49 @@ function add() {
 				Number(prixArticle), Number(prixArticle * quantity));
 		commandes.push(newCommande);
 	}
+	if (document.getElementById('gender1').checked)
+		gender = document.getElementById("gender1").value;
+	else
+		gender = document.getElementById("gender2").value;
+	clientInfo = document.getElementById("clientInfo").value;
+	document.getElementById("ClientInfo").innerHTML = gender + " " + clientInfo;
+	
+	if (document.getElementById("Detail").checked)
+		detail();
+	else
+		document.getElementById("resultDetail").innerHTML = "";
+	
+	if (document.getElementById("prixtot").checked)
+		prixtotal();
+	else
+		document.getElementById("resultPrixTotal").innerHTML = "";
 
 }
 
-function print() {
-	var text, cLen, i;
-	var cLen = commandes.length;
-	text = "<table><thead><tr><th>Quantite</th><th>Article</th><th>Prix Unitaire</th><th>Prix Total</th></tr></thead>";
-	for (var i = 0; i < cLen; i++) {
-		text += "<tbody>" + "<tr>" + "<td>" + commandes[i].quantity + "</td>"
-				"<td>" + commandes[i].article + "</td>" + "<td>"
-				+ commandes[i].prixArticle + "</td>"  + "<td>"
-				+ commandes[i].prixTotal + "</td>" + "</tr>" + "</tbody>";
-	}
-	text += "</table>";
-
-	document.getElementById("resultDetail").innerHTML = text;
-}
-
-function Detail() {
-	var text, cLen, i;
-	var cLen = commandes.length;
-	text = "<table><thead><tr><th>Quantite</th><th>Article</th><th>Prix Unitaire</th><th>Prix Total</th></tr></thead>";
-	for (var i = 0; i < cLen; i++) {
-		text += "<tbody>" + "<tr>" + "<td>" + commandes[i].quantity + "</td>"
-				+ "<td>" + commandes[i].article + "</td>" + "<td>"
-				+ commandes[i].prixArticle + "</td>" + "<td>"
-				+ commandes[i].prixTotal + "</td>" + "</tr>" + "</tbody>";
-	}
-	text += "</table>";
-
-	document.getElementById("resultDetail").innerHTML = text;
-}
-
-function Detail() {
-	var text, cLen, i;
-	cLen = commandes.length;
-	var check = document.getElementById("Detail").checked
-	if (check) {
-		text = "<table><thead><tr><th>Quantite</th><th>Article</th><th>Prix Unitaire</th><th>Prix Total</th></tr></thead>";
-		for (var i = 0; i < cLen; i++) {
-			text += "<tbody>" + "<tr>" + "<td>" + commandes[i].quantity
-					+ "</td>" + "<td>" + commandes[i].article + "</td>"
-					+ "<td>" + commandes[i].prixArticle + "</td>" + "<td>"
-					+ commandes[i].prixTotal + "</td>" + "</tr>" + "</tbody>";
-		}
-		text += "</table>";
-
-		document.getElementById("resultDetail").innerHTML = text;
-	} else
-		alert("Erreur dans les champs de saisie");
-}
-
-function prix() {
-	document.getElementById('"prixtot"').onclick = function() {
-		document.getElementById("resultDetail").innerHTML = text;
-		if (this.checked) {
-			var sum = 0;
-			for (var i = 0; i < commandes.length; i++) {
-				sum += commandes[i].prixTotal;
-			}
-			return sum;
-			alert(this.value);
-		}
-
-		else {
-			alert("it's not true")
-		}
+function detail() {
+	var text1 = "<table><thead><tr><th>Quantite</th><th>Article</th><th>Prix Unitaire</th><th>Prix Total</th></tr></thead><tbody>";
+	for ( var x in commandes) {
+		text1 += "<tr>";
+		text1 += "<td>" + commandes[x].quantity + "</td>";
+		text1 += "<td>" + commandes[x].article + "</td>";
+		text1 += "<td>" + commandes[x].prixArticle + "</td>";
+		text1 += "<td>" + commandes[x].prixTotal + "</td>";
+		text1 += "</tr>";
 
 	}
+	text1 += "</tbody></table>";
+	document.getElementById("resultDetail").innerHTML = text1;
+
 }
+
+function prixtotal() {
+	var somme = 0;
+	for ( var x in commandes) {
+		somme += commandes[x].prixTotal ;
+	}
+	var text2 = "<p> Le total est de: " + somme + "</p>";
+	document.getElementById("resultPrixTotal").innerHTML = text2;
+
+}
+
+
