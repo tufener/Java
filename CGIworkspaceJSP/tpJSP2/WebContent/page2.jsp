@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>je suis la page 1 jsp de maven web</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>je suis la page 1 jsp de maven web</h1>
+OK
+Authentification p = (Authentification)request.getAttribute("p");
+out.print(p.getNom());
 </body>
 </html>
