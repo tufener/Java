@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<%
+<%-- 	<%
 		Integer hitsCount = (Integer) application.getAttribute("hitCounter");
 		if (hitsCount == null || hitsCount == 0)
 		{
@@ -23,12 +23,18 @@
 			hitsCount += 1;
 		}
 		application.setAttribute("hitCounter", hitsCount);
-	%>
-	<center>
-		<p>
-			Total number of visits:
-			<%=hitsCount%>
-		</p>
-	</center>
+	%> --%>
+	
+	Object o = application.getAttribute("hitCounter");
+		int hitsCount = 0;
+		if (o == null)
+			application.setAttribute("hitCounter", hitsCount);
+		else {
+			hitsCount = (int) o;
+			hitsCount += 1;
+		}
+		application.setAttribute("hitCounter", hitsCount);
+		out.print(hitsCount);
+
 </body>
 </html>

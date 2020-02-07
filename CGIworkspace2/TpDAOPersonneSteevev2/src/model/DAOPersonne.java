@@ -58,7 +58,7 @@ public class DAOPersonne {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root", "root");
 
-		String sql = "INSERT INTO personnes(id,nom,prenom) VALUES(?,?,?)";
+		String sql = "INSERT INTO personnes(id,nom,prenom) VALUES(?, ?, ?)";
 		PreparedStatement st = conn.prepareStatement(sql);
 		st.setInt(1, p.getId());
 		st.setString(2, p.getNom());
