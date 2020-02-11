@@ -1,0 +1,10 @@
+.jumbotron {
+    color: white;
+    background-image: url("../img/image5.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20vh;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    font-family: "Droid Serif",serif;
+}
