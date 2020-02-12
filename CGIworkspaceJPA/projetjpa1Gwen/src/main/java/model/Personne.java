@@ -2,29 +2,36 @@ package model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.Version;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "Personne.findAll", query = "select p  from Personne p ") ,  @NamedQuery(name = "Personne.findAll2", query = "select p  from Personne p ")})
 public class Personne {
-	private String nom, prenom; 
-	private int id, age;
-	
-	
-	public Personne(int id, String nom, String prenom, int age) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.id = id;
-		this.age = age;
-	}
-	
+
+	private int id;
+	private String nom;
+	private String prenom;
+	private int age;
+
+	private int version;
 
 	public Personne() {
-		super();
 	}
 
+	public Personne(int id, String nom, String prenom, int age) {
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.age = age;
+	}
+
+	@Id
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getNom() {
 		return nom;
@@ -42,15 +49,6 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
-	@Id
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public int getAge() {
 		return age;
 	}
@@ -59,11 +57,18 @@ public class Personne {
 		this.age = age;
 	}
 
+	@Version
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
 	@Override
 	public String toString() {
-		return "Personne find [nom=" + nom + ", prenom=" + prenom + ", id=" + id + ", age=" + age + "]";
-	} 
+		return "Personne [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
+	}
 
-	
-	
 }
