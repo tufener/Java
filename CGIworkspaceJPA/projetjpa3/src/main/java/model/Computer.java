@@ -11,6 +11,13 @@ public class Computer {
 	private String SerialNumber, model;
 	private int version;
 	private Personne personne;
+	
+	
+//	@OneToOne(mappedBy = "pc")
+	@OneToOne(mappedBy = "pc", fetch=FetchType.LAZY)
+	public Personne getPersonne() {
+		return personne;
+	}
 
 	public Computer(String serialNumber, String model, int version, Personne personne) {
 		
@@ -55,10 +62,6 @@ public class Computer {
 		this.personne = personne;
 	}
 
-//	@OneToOne(mappedBy = "pc")
-	@OneToOne(mappedBy = "pc", fetch=FetchType.LAZY)
-	public Personne getPersonne() {
-		return personne;
-	}
+
 
 }
