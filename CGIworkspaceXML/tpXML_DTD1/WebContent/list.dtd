@@ -1,0 +1,12 @@
+<!ELEMENT list (recipe+)>
+<!ELEMENT recipe (author,recipe_name,meal,ingredients,directions)>
+<!ELEMENT ingredients (item+)>
+<!ELEMENT item EMPTY>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT recipe_name (#PCDATA)>
+<!ELEMENT directions (#PCDATA)>
+<!ELEMENT meal (#PCDATA|course)*>
+<!ELEMENT course (#PCDATA)>
+<!ATTLIST item quantity CDATA #IMPLIED>
+<!ATTLIST item type CDATA #REQUIRED>
+<!ATTLIST directions totaltime CDATA #REQUIRED>

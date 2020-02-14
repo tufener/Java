@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT list (recipe)>
+<!ELEMENT recipe (author, recipe_name, meal, ingredients, directions)>
+<!ELEMENT meal (course)>
+<!ELEMENT ingredients (item, quantity, type)>

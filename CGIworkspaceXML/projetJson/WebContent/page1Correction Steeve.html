@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Lecture JSON</title>
+</head>
+<body>
+
+	<button onclick="affiche()">Afficher la société</button>
+	<p id="text"><h2>Société :</h2><h5>Jean-Pierre Caillou, 25 ans<br></h5>majeur<br>6 rue Rougemont 75000<br>Compte :<br>- Banque : populaire<br>- Rib : Cage<br>Affectation : projet<br><br><h5>Jean-Paul Position, 15 ans<br></h5>mineur<br>6 rue Rougemont 75000<br>Compte :<br>- Banque : populaire<br>- Rib : Cage<br>Affectation : Aucun<br><br><h5>Steve Rogers, 95 ans<br></h5>majeur<br>11 rue Jérôme Rifflebourg 75000<br>Compte :<br>- Banque : populaire<br>- Rib : Cage<br>Affectation : sauver le monde<br><br></p>
+
+	<script>
+	var txt = '{"societe":[{"nom":"Caillou","prenom":"Jean-Pierre","age":25,"majeur":true,"Adresse":{"numero":6,"rue":"Rougemont","cp":75000},"Compte":{"Banque":"populaire","Rib":"Cage"},"affectation":"projet"},{"nom":"Position","prenom":"Jean-Paul","age":15,"majeur":false,"Adresse":{"numero":6,"rue":"Rougemont","cp":75000},"Compte":{"Banque":"populaire","Rib":"Cage"},"affectation":null},{"nom":"Rogers","prenom":"Steve","age":95,"majeur":true,"Adresse":{"numero":11,"rue":"Jérôme Rifflebourg","cp":75000},"Compte":{"Banque":"populaire","Rib":"Cage"},"affectation":"sauver le monde"}]}';
+		var obj = JSON
+				.parse(txt);
+
+		function affiche() {
+			
+			var res = "<h2>Société :</h2>"
+			
+			for (i=0;i<obj.societe.length;i++){
+				res+="<h5>"+ obj.societe[i].prenom + " ";
+				res+= obj.societe[i].nom +", " + obj.societe[i].age + " ans<br></h5>";
+				res+=(obj.societe[i].majeur?"majeur":"mineur")+"<br>";
+				res+=obj.societe[i].Adresse.numero+" rue "+ obj.societe[i].Adresse.rue + " " + obj.societe[i].Adresse.cp + "<br>";
+				res+="Compte :<br>"
+					res+="- Banque : " + obj.societe[i].Compte.Banque +"<br>";
+					res+="- Rib : " + obj.societe[i].Compte.Rib+"<br>";
+				res+="Affectation : " + (obj.societe[i].affectation==null?"Aucun":obj.societe[i].affectation)+"<br>";
+				res+="<br>";
+				}
+			document.getElementById("text").innerHTML = res;
+		}
+	</script>
+
+
+</body>
+</html>
