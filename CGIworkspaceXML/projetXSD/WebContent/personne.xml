@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<personne xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation='personne.xsd'>
+	
+	
+  <nom>marie</nom>
+  <prenom>Jani</prenom>
+  <age>28</age>
+  <status fixed="true">majeur</status>
+  <etude>ingénieur</etude>
+</personne>
