@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- activation les annotations -->
+	<context:annotation-config></context:annotation-config>
+
+	<context:component-scan base-package="formationSpring.beans"></context:component-scan>
+
+	
+	
+	<bean id="adr" class="formationSpring.beans.Adresse">
+		<property name="num" value="55" />
+		<property name="rue" value="Rue Maurice Gunsbourg" />
+		<property name="codePostal" value="94200" />
+		<property name="ville" value="Ivry/Seine" />
+	</bean>
+	
+
+	<bean id="pers1" class="formationSpring.beans.Personne">
+		<property name="nom" value="Nelson" />
+		<property name="prenom" value="Mandela" />
+		<property name="age" value="102" />
+		<property name="adresse" ref="adr" />
+	</bean>
+	
+	<bean id="pers2" class="formationSpring.beans.Personne">
+		<property name="nom" value="Martin" />
+		<property name="prenom" value="Luther King Jr" />
+		<property name="age" value="91" />
+		<property name="adresse" ref="adr" />
+	</bean>
+	
+	
+	<bean id="Collection" class="formationSpring.beans.javaCollection">
+		<property name="adresseList">
+			<list>
+				<value>France</value>
+				<value>USA</value>
+				<value>Afrique du Sud</value>
+			</list>
+		</property>
+		
+		<property name="adresseList">
+			<list>
+				<value>1000000</value>
+				<value>1000000000</value>
+				<value>1000000000000</value>
+			</list>
+		</property>
+	
+		<property name="adresseMap">
+			<map>
+				<entry key ="1" value="France"/>
+				<entry key ="2" value="USA"/>
+				<entry key ="3" value="Afrique du Sud"/>
+			</map>
+		</property>
+	</bean>
+
+
+
+
+</beans>

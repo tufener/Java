@@ -14,95 +14,75 @@ import javax.ws.rs.core.Response;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
 
-
-
-
-
 public class Test {
 
 	public static void main(String[] args) {
-		selectAll();
+//		selectAll();
 //		findById();
 //		create();
-		update();
+//		update();
+//		delete();
 
 	}
-	
+
 	static void selectAll() {
 		Client client = ClientBuilder.newClient();
 		WebTarget target = client.target("http://localhost:8080/projetRestServerDaoPersonne/Dao/selectAll");
-		List<Personne> res=target.request(MediaType.APPLICATION_JSON).get(new GenericType<List<Personne>>(){});
-		for(Personne p : res)
+		List<Personne> res = target.request(MediaType.APPLICATION_JSON).get(new GenericType<List<Personne>>() {
+		});
+		for (Personne p : res)
 			System.out.println(p);
 	}
-	
-//	static void findById() {
-//		Client client = ClientBuilder.newClient();
-//		
-//		WebTarget target = client.target("http://localhost:8080/projetRestServerDaoPersonne/Dao/findById").path("1");
-//		String m = target.request(MediaType.APPLICATION_JSON).get(String.class);
-//		System.out.println("reponse : " + m);
-//	}
-//	
-//	
+
+	static void findById() {
+		Client client = ClientBuilder.newClient();
+
+		WebTarget target = client.target("http://localhost:8080/projetRestServerDaoPersonne/Dao/findById").path("9");
+		String m = target.request(MediaType.APPLICATION_JSON).get(String.class);
+		System.out.println("reponse : " + m);
+	}
+
 	static void create() {
 		Client client = ClientBuilder.newClient();
 		Personne p = new Personne();
-		p.setId(30);
-		p.setNom("Sun");
-		p.setPrenom("Tzu");
-		
-		
-		
+		p.setId(9);
+		p.setNom("Solid");
+		p.setPrenom("Snake");
+
 		WebTarget target = client.target("http://localhost:8080/projetRestServerDaoPersonne/Dao/create");
 		target.request(MediaType.APPLICATION_JSON).post(Entity.entity(p, MediaType.APPLICATION_JSON), Personne.class);
-		
+
 	}
-	
+
 	static void update() {
-		Client client = ClientBuilder.newClient( new ClientConfig().register( LoggingFilter.class ) );
-		WebTarget target = client.target("http://localhost:8080/projetRestServerDaoPersonne/Dao/update").path("update").path("30");
+		Client client = ClientBuilder.newClient(new ClientConfig().register(LoggingFilter.class));
+		WebTarget target = client.target("http://localhost:8080/projetRestServerDaoPersonne/Dao").path("update")
+				.path("30");
 		Personne p = new Personne();
-		p.setId(30);
-		p.setNom("Martin");
-		p.setPrenom("Luther King");
-		
-		
-		
-		Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
+		p.setId(3);
+		p.setNom("Nelson");
+		p.setPrenom("Mandela");
+
+		Invocation.Builder invocationBuilder = target.request(MediaType.APPLICATION_JSON);
 		Response response = invocationBuilder.put(Entity.entity(p, MediaType.APPLICATION_JSON));
-		 
-		Personne p = response.readEntity(Personne.class);
-		     
+
+		Personne personne = response.readEntity(Personne.class);
+
 		System.out.println(response.getStatus());
 		System.out.println(p);
 		selectAll();
 	}
-//	
-//	
-//	static void testCalcInfoJSON() {
-//		Client client = ClientBuilder.newClient();
-//		
-//		WebTarget target = client.target("http://localhost:8080/projetRESTSERVERCalc/Calc/Info");
-//		CalcInfo m = target.request(MediaType.APPLICATION_JSON).get(CalcInfo.class);
-//		System.out.println("reponse : " + m);
-//	}
-//	
-//
-//	
-//	static void testDoubleCalc() {
-//		Client client = ClientBuilder.newClient();
-//		
-//		WebTarget target = client.target("http://localhost:8080/projetRESTSERVERCalc/Calc/Addv0");
-//		double m = target.request(MediaType.APPLICATION_JSON).get(Double.class);
-//		System.out.println("reponse : " + m);
-//	}
-//	
-//	static void testHello() {
-//		Client client = ClientBuilder.newClient();
-//		
-//		WebTarget target = client.target("http://localhost:8080/projetRESTSERVERHelloV2/Hello/hello");
-//		String m = target.request(MediaType.APPLICATION_JSON).get(String.class);
-//		System.out.println("reponse : " + m);
-//	}
+
+	static void delete() {
+		Client client = ClientBuilder.newClient();
+		WebTarget target = client.target("http://localhost:8080/projetRestServerDaoPersonne/Dao/delete").path("3");
+
+		Invocation.Builder invocationBuilder = target.request();
+		Response response = invocationBuilder.delete();
+		selectAll();
+		System.out.println(response.getStatus());
+		System.out.println(response.readEntity(String.class));
+
+	}
+
 }

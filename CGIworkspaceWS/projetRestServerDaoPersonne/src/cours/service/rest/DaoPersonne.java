@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -119,8 +120,8 @@ public class DaoPersonne {
 	
 	@PUT
 	@Path("/update/{id}")
-	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
 	public void update(@PathParam("id") int id, Personne p)  {
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -134,6 +135,24 @@ public class DaoPersonne {
 		st.setInt(3, p.getId());
 
 		st.executeUpdate();
+		conn.close();
+		}catch(ClassNotFoundException | SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	@DELETE
+	@Path("/delete/{id}")
+	public void delete(@PathParam("id")Integer id ) {
+		try{
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root", "root");
+
+		String sql = "DELETE FROM personnes WHERE id=" +id;
+		Statement st = conn.createStatement();
+
+		st.executeUpdate(sql);
 		conn.close();
 		}catch(ClassNotFoundException | SQLException e) {
 			System.out.println(e.getMessage());
