@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- activation les annotations -->
+	<context:annotation-config></context:annotation-config>
+
+	<context:component-scan base-package="formationSpring.beans"></context:component-scan><!-- classes instanciables -->
+
+	<bean id="guitariste" class="formationSpring.beans.Guitariste">
+	<property name="nom" value="Alan"></property>
+	<property name="instrument" ref="guitare"></property>
+	</bean>
+	<bean id="guitare" class="formationSpring.beans.Guitare"></bean>
+	
+	<bean id="saxophone" class="formationSpring.beans.Saxo"></bean>
+	
+	<bean id="saxo" class="formationSpring.beans.Saxophoniste">
+	<property name="nom" value="Yass"></property>
+	<property name="instrument" ref="saxophone"></property>
+	</bean>
+<!-- 	<bean id="adresse" class="formationSpring.beans.Adresse">
+	<property name="numero" value="19"></property>
+	<property name="rue" value="Sunny Delight"></property>
+	<property name="cp" value="29720"></property>
+	</bean>
+	
+	
+	<bean id="liste" class="formationSpring.beans.JavaCollection">
+	<property name="adressList" >
+	<list>
+		<value>Paris</value>
+		<value>Singapour</value>
+		<value>Iowa</value>
+		<value>Tchétchénie</value>
+	</list>
+	</property>
+	
+	<property name="adressMap" >
+	<map>
+		<entry key ="1" value="Paris" />
+		<entry key ="2" value="Singapour" />
+		<entry key ="3" value="Iowa" />
+		<entry key ="4" value="Tchétchénie" />
+	</map>
+	</property>
+	</bean> -->
+	
+
+</beans>

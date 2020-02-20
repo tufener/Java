@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- activation les annotations -->
+	<context:annotation-config></context:annotation-config>
+
+	<context:component-scan base-package="formationSpring.beans"></context:component-scan>
+	
+
+	<bean id="chris" class="formationSpring.beans.Guitariste">
+		<property name="nom" value="Christophe Mae Guitariste" />
+		<property name="instrumentCorde" ref="guitariste" />
+	</bean>
+	
+	<bean id="malik" class="formationSpring.beans.Guitariste">
+		<property name="nom" value="Malik Ben Salah Violoniste" />
+		<property name="instrumentCorde" ref="violoniste" />
+	</bean>
+	
+	<bean id="guitariste" class="formationSpring.beans.Guitare"></bean>
+	<bean id="violoniste" class="formationSpring.beans.Violon"></bean>
+	
+	
+	<bean id="foule" class="formationSpring.beans.Foule" />
+	
+	<aop:config>
+		<aop:pointcut id="messageMusicien" expression="execution(* formationSpring.beans.*.Jouer(..)) " />
+		<aop:aspect id="messageExe" ref="foule">
+			<aop:before method="printAvant" pointcut-ref="messageMusicien" />
+			<aop:after method="printApres" pointcut-ref="messageMusicien" />
+		</aop:aspect>
+	</aop:config>
+
+
+</beans>
