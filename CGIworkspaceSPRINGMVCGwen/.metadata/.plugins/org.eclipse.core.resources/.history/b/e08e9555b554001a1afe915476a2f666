@@ -1,0 +1,5 @@
+package formationSpringMvc.controller;
+
+public class HelloRestController {
+
+}

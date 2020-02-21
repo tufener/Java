@@ -33,7 +33,9 @@ public class Test {
 	
 		List<Personne> l1 = dao.findAllv2();
 		System.out.println("Nombre au debut " + l1.size());
-		System.out.println(l1);
+		for(Personne p :l1)
+			System.out.println(p);
+	
 		context.close();
 
 	}

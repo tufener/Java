@@ -1,0 +1,6 @@
+package formationSpringMvc.controller;
+
+@Controller
+public class PersonneController {
+
+}

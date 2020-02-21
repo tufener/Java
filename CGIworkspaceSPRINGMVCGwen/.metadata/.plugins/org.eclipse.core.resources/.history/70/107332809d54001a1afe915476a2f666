@@ -1,0 +1,19 @@
+package formationSpringMvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class UserController {
+
+	@RequestMapping("/user1")
+	public String user1() {
+		return "user/user1";
+	}
+
+	@RequestMapping("/user2")
+	public String user2() {
+		return "user/user2";
+	}
+
+}

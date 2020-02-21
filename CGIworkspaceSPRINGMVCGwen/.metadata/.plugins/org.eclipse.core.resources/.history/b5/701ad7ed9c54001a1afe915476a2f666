@@ -1,0 +1,19 @@
+package formationSpringMvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class PersonneController {
+
+	@RequestMapping("/personne1")
+	public String personne1() {
+		return "personne/personne1";
+	}
+
+	@RequestMapping("/personne2")
+	public String personne2() {
+		return "personne/personne2";
+	}
+
+}

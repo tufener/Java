@@ -1,0 +1,20 @@
+package formationSpringMvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class PersonneController {
+
+	@RequestMapping("/hello")
+	public String hello() {
+
+		return "hello/hello"; // hello est le nom de la vue > hello.jsp dans le dossier hello
+	}
+
+	@RequestMapping("/hello2")
+	public String hello2() {
+		return "hello/hello2";
+	}
+
+}
