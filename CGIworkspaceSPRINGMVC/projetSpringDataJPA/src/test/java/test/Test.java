@@ -10,11 +10,11 @@ import model.Personne;
 public class Test {
 
 	public static void main(String[] args) {
-		//findAll();
-		//findById();
-		//testCreate();
-		//testUpdate();
-		//testDelete();
+		findAll();
+		findById();
+//		testCreate();
+//		testUpdate();
+//		testDelete();
 		testFindByName();
 	}
 
@@ -71,7 +71,7 @@ public class Test {
 	static void testFindByName() {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		DAOPersonne d = (DAOPersonne)context.getBean(DAOPersonne.class);
-		List<Personne> l = d.findByName("Luisa");
+		List<Personne> l = d.findByName("luiz");
 		for (Personne p : l)
 			System.out.println(p);
 		context.close();

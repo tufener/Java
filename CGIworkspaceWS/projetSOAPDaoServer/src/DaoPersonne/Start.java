@@ -13,7 +13,7 @@ public class Start {
 	}
 	
 	static void TestDaoPersonne() {
-		String url = "http://192.168.1.34:8586/";
+		String url = "http://192.168.1.103:8586/";
 		// Endpoint en1= Endpoint.publish(url, new MeteoService());
 		Endpoint en = Endpoint.publish(url, new ServiceDAOPersonne());
 		System.out.println(url);

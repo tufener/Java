@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -26,9 +27,9 @@ public class DaoPersonne {
 	}
 
 	@GET
-	@Path("/selectAll")
+	@Path("/personnes")
 	@Produces(MediaType.APPLICATION_JSON)
-	public ArrayList<Personne> selectAll() {
+	public List<Personne> selectAll() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cgi", "root", "root");
@@ -64,7 +65,7 @@ public class DaoPersonne {
 	}
 
 	@GET
-	@Path("/findById/{id}")
+	@Path("/personnes/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Personne findById(@PathParam(value="id")int id) {
 		try {
@@ -95,7 +96,7 @@ public class DaoPersonne {
 	}
 
 	@POST
-	@Path("/create")
+	@Path("/personnes")
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void create(Personne p) {
@@ -119,7 +120,7 @@ public class DaoPersonne {
 	}
 	
 	@PUT
-	@Path("/update/{id}")
+	@Path("/personnes/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void update(@PathParam("id") int id, Personne p)  {
@@ -142,7 +143,7 @@ public class DaoPersonne {
 	}
 	
 	@DELETE
-	@Path("/delete/{id}")
+	@Path("/personnes/{id}")
 	public void delete(@PathParam("id")Integer id ) {
 		try{
 		Class.forName("com.mysql.jdbc.Driver");
@@ -158,36 +159,5 @@ public class DaoPersonne {
 			System.out.println(e.getMessage());
 		}
 	}
-
-//	@GET
-//	@Path("/Addv0")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public double getAdd() {
-//
-//		return 10;
-//	}
-//	
-//	@GET
-//	@Path("/Info")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public Personne getInfo() {
-//
-//		Personne c=new Personne();
-//		c.setA(10);
-//		c.setB(20);
-//		
-//		return c;
-//	}
-//
-//
-//	
-//	@POST
-//	@Path("/Add")
-//	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
-//	@Consumes(MediaType.APPLICATION_JSON)
-//	public int Add(Personne info) {
-//
-//		return info.getA() + info.getB();
-//	}
 
 }
