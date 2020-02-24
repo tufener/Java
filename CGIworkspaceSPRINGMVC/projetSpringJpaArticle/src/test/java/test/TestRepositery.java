@@ -11,7 +11,7 @@ import repository.ArticleRepository;
 public class TestRepositery {
 
 	public static void main(String[] args) {
-//		findAll();
+		findAll();
 //		findById();
 //		findByIdv2();
 //		findByMarque();

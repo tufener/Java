@@ -12,11 +12,11 @@ public class TestRepositery {
 
 	public static void main(String[] args) {
 		findAll();
-		findById();
-		findByIdv2();
-		findByNom();
-		findByNomOrderDesc();
-		findAllByOrderByNom ();
+//		findById();
+//		findByIdv2();
+//		findByNom();
+//		findByNomOrderDesc();
+//		findAllByOrderByNom ();
 //		create();
 //		delete();
 //		update();

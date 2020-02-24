@@ -1,0 +1,10 @@
+2019-10-15 22:11:52,496 [Worker-14] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: sopra.3bu:formationSpring:1.0-SNAPSHOT @ C:\Users\admin\Desktop\SPRING-FORMATION\OLIVIER\formationSpring\pom.xml.
+2019-10-15 22:11:53,791 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /formationSpring/src/main/java
+2019-10-15 22:11:53,792 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /formationSpring/src/main/resources
+2019-10-15 22:11:53,793 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /formationSpring/src/test/java
+2019-10-15 22:11:53,794 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /formationSpring/src/test/resources
+2019-10-15 22:11:53,905 [Worker-14] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2019-10-15 22:11:55,163 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-10-15 22:11:55,170 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-10-15 22:11:55,193 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-10-15 22:11:55,198 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
