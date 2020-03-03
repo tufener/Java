@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Personne } from '../models/personne';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-mon-premier',
@@ -6,10 +8,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mon-premier.component.sass']
 })
 export class MonPremierComponent implements OnInit {
-  title: string="Hasret Cadir";
-  constructor() { }
+  title: string = "Hasret Cadir";
+  constructor() { };
+  isAuth: boolean = true;
+  heroes: string[] = ["Superman", "Batman", "Spiderman", "Tamere"];
+  matos: string[] = ["MacBook Pro", "Huawei", "Hp", "Asus", "Samsung", "Razer", "AlienWare", "Dell", "Lenovo"];
+  MyPersonne: Personne = new Personne();
+  User: Array<Personne> = new Array<Personne>();
+
+
 
   ngOnInit(): void {
+
   }
+  onAllumer() {
+    console.log("On allume tout !")
+    this.isAuth = !this.isAuth;
+    console.log(this.isAuth);
+  }
+
+  onTest(event) {
+    console.log(event, "class mere");
+  }
+
+  AddUser() {
+    let MyPersonne1 = new Personne();    
+    MyPersonne1.Email = ""; 
+    MyPersonne1.Nom =""; 
+    MyPersonne1.Prenom=""; 
+    MyPersonne1.Password=""; 
+    MyPersonne1.Profil=""; 
+    MyPersonne1.Date=""; 
+    this.User.push(MyPersonne1);
+
+  }
+
 
 }
