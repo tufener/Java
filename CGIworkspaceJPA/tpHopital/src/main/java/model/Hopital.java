@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 public class Hopital {
 	private int idHopital;
 	private String nomHopital;
+	@OneToMany(mappedBy = "hopital")
 	private Collection<Salle> salles;
 	private Collection<Patient> patient;
 
@@ -45,7 +46,7 @@ public class Hopital {
 		this.nomHopital = nomHopital;
 	}
 
-	@OneToMany(mappedBy = "hopital")
+	
 	public Collection<Salle> getSalles() {
 		return salles;
 	}

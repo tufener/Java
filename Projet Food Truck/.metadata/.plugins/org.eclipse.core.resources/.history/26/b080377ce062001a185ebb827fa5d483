@@ -1,0 +1,33 @@
+package com.example.demo.model;
+
+public class LibelleRepasClass {
+	private int num_repas;
+	private String nameRepas;
+
+	public int getNum_repas() {
+		return num_repas;
+	}
+
+	public void setNum_repas(int num_repas) {
+		this.num_repas = num_repas;
+	}
+
+	public String getNameRepas() {
+		return nameRepas;
+	}
+
+	public void setNameRepas(String nameRepas) {
+		this.nameRepas = nameRepas;
+	}
+
+	public LibelleRepasClass(int num_repas, String nameRepas) {
+		
+		this.num_repas = num_repas;
+		this.nameRepas = nameRepas;
+	}
+
+	public LibelleRepasClass() {
+		
+	}
+
+}

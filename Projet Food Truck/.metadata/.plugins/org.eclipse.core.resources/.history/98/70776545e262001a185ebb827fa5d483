@@ -1,0 +1,54 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Libelle_Repas")
+public class LibelleRepasClass {
+	@Id
+	@GeneratedValue
+	private int num_repas;
+	private String nameRepas;
+	private Repas _repas; 
+
+	public int getNum_repas() {
+		return num_repas;
+	}
+
+	public void setNum_repas(int num_repas) {
+		this.num_repas = num_repas;
+	}
+
+	public String getNameRepas() {
+		return nameRepas;
+	}
+
+	public void setNameRepas(String nameRepas) {
+		this.nameRepas = nameRepas;
+	}
+
+	public Repas get_repas() {
+		return _repas;
+	}
+
+	public void set_repas(Repas _repas) {
+		this._repas = _repas;
+	}
+
+	public LibelleRepasClass(int num_repas, String nameRepas, Repas _repas) {
+		
+		this.num_repas = num_repas;
+		this.nameRepas = nameRepas;
+		this._repas = _repas;
+	}
+
+	public LibelleRepasClass() {
+		
+	}
+
+	
+
+}

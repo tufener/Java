@@ -1,0 +1,54 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Libelle_Famille_repas")
+public class LibelleFamilleRepasClass {
+	@Id
+	@GeneratedValue
+	private int num_Famille_Repas;
+	private String nameFamilleRepas;
+	private FamilleRepas famille_repas; 
+
+	public int getNum_Famille_Repas() {
+		return num_Famille_Repas;
+	}
+
+	public void setNum_Famille_Repas(int num_Famille_Repas) {
+		this.num_Famille_Repas = num_Famille_Repas;
+	}
+
+	public String getNameFamilleRepas() {
+		return nameFamilleRepas;
+	}
+
+	public void setNameFamilleRepas(String nameFamilleRepas) {
+		this.nameFamilleRepas = nameFamilleRepas;
+	}
+
+	public FamilleRepas getFamille_repas() {
+		return famille_repas;
+	}
+
+	public void setFamille_repas(FamilleRepas famille_repas) {
+		this.famille_repas = famille_repas;
+	}
+
+	public LibelleFamilleRepasClass(int num_Famille_Repas, String nameFamilleRepas, FamilleRepas famille_repas) {
+		
+		this.num_Famille_Repas = num_Famille_Repas;
+		this.nameFamilleRepas = nameFamilleRepas;
+		this.famille_repas = famille_repas;
+	}
+
+	public LibelleFamilleRepasClass() {
+		
+	}
+
+	
+
+}

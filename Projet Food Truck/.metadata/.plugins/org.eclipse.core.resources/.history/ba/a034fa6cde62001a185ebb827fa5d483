@@ -1,0 +1,33 @@
+package com.example.demo.model;
+
+public class LibelleFamilleRepasClass {
+	private int id_Famille_Repas;
+	private String nameFamilleRepas;
+
+	public int getId_Famille_Repas() {
+		return id_Famille_Repas;
+	}
+
+	public void setId_Famille_Repas(int id_Famille_Repas) {
+		this.id_Famille_Repas = id_Famille_Repas;
+	}
+
+	public String getNameFamilleRepas() {
+		return nameFamilleRepas;
+	}
+
+	public void setNameFamilleRepas(String nameFamilleRepas) {
+		this.nameFamilleRepas = nameFamilleRepas;
+	}
+
+	public LibelleFamilleRepasClass(int id_Famille_Repas, String nameFamilleRepas) {
+		super();
+		this.id_Famille_Repas = id_Famille_Repas;
+		this.nameFamilleRepas = nameFamilleRepas;
+	}
+
+	public LibelleFamilleRepasClass() {
+		super();
+	}
+
+}
