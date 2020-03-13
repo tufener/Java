@@ -1,0 +1,19 @@
+package com.example.demo.model;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+public class Adresse {
+	private int id_Adresse; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_utilisateur")
+	private Utilisateur utilisateur; 
+	
+	private String rue; 
+	private String code_Postale; 
+	private String ville; 
+	private String pays;
+	private boolean isActive; 
+
+}

@@ -1,0 +1,25 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="artiste")
+public class Artiste {
+	
+	@GeneratedValue
+	@Id
+	private int id_Artist; 
+	private String nom; 
+	private String prenom; 
+	private String presentation; 
+	
+	@OneToMany(mappedBy = "artiste")
+	private Collection<Photographies> photo;
+
+}

@@ -1,0 +1,44 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="utilisateur")
+public class Utilisateur {
+	@GeneratedValue
+	@Id
+	private int id_utilisateur; //
+	
+	private String civilite; //
+	private String nom; //
+	private String prenom; //
+	private String email; //
+	private String telephone;//
+	private String password; //
+	
+	@OneToMany(mappedBy = "utilisateurAdresse")//
+	private Collection<Adresse> adresse; 
+	
+	@OneToOne
+	@JoinColumn(name="id_role")//
+	private Role role; 
+	
+	@OneToMany(mappedBy = "utilisateurCommande")//
+	private Collection<Commandes> commandes; 
+
+	@ManyToMany
+	@JoinTable(name = "authentification_utilisateur", joinColumns = @JoinColumn(name = "id_utilisateur"), inverseJoinColumns = @JoinColumn(name = "id_authentification"))
+	private Collection<Authentification> authentification; 
+	
+	
+}

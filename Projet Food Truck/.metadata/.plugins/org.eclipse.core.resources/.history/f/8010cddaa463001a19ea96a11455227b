@@ -1,0 +1,106 @@
+package com.example.demo.model;
+
+import java.util.Date;
+
+public class Actualites {
+	
+	private int id;
+	private String titre;
+	private String description;
+	private String imageUrl;
+	private Date valid;
+	private Date fin_valid;
+	private Date execution;
+	private Date creation;
+	
+	public Actualites() {
+		
+	}
+	
+	public Actualites(int id, String titre, String description, String imageUrl, Date valid, Date fin_valid,
+			Date execution, Date creation) {
+		super();
+		this.id = id;
+		this.titre = titre;
+		this.description = description;
+		this.imageUrl = imageUrl;
+		this.valid = valid;
+		this.fin_valid = fin_valid;
+		this.execution = execution;
+		this.creation = creation;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitre() {
+		return titre;
+	}
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public Date getValid() {
+		return valid;
+	}
+
+	public void setValid(Date valid) {
+		this.valid = valid;
+	}
+
+	public Date getFin_valid() {
+		return fin_valid;
+	}
+
+	public void setFin_valid(Date fin_valid) {
+		this.fin_valid = fin_valid;
+	}
+
+	public Date getExecution() {
+		return execution;
+	}
+
+	public void setExecution(Date execution) {
+		this.execution = execution;
+	}
+
+	public Date getCreation() {
+		return creation;
+	}
+
+	public void setCreation(Date creation) {
+		this.creation = creation;
+	}
+
+	@Override
+	public String toString() {
+		return "Actualites [id=" + id + ", titre=" + titre + ", description=" + description + ", imageUrl=" + imageUrl
+				+ ", valid=" + valid + ", fin_valid=" + fin_valid + ", execution=" + execution + ", creation="
+				+ creation + "]";
+	}
+	
+	
+
+}

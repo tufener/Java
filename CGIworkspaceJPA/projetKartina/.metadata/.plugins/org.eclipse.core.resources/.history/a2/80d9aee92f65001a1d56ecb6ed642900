@@ -1,0 +1,19 @@
+Adresse: 
+INSERT INTO `kartina`.`adresse`
+(`id_adresse`,
+`code_postale`,
+`is_active`,
+`pays`,
+`rue`,
+`ville`,
+`id_utilisateur`)
+VALUES
+(1,
+"75000",
+true,
+"France",
+"83 Rue Jean Jaures",
+"Marbahce",
+1);
+SELECT * FROM kartina.adresse;
+

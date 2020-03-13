@@ -1,0 +1,43 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="commandes_photographies")
+public class Commandes_Photographies {
+	
+	private int quantite; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_commande")
+	private Commandes commandes; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_photo")
+	private Photographies photoCommande; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_cadre")
+	private Cadre cadre; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_finition")
+	private Finition finition; 
+	
+	
+	@ManyToOne
+	@JoinColumn(name="id_format")
+	private Format formats; 
+	
+
+	
+	
+
+}

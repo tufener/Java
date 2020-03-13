@@ -1,0 +1,133 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="users")
+public class User {
+	@GeneratedValue
+	@Id
+	private int id;
+	private String nom; 
+	private String prenom;
+	private Date date_de_naissance;
+	private String email; 
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<Adresse_Facturation> af;
+	
+	@OneToMany(mappedBy = "user")
+	private Collection<Adresse_Livraison> al;
+	
+	@OneToOne
+	@JoinColumn(name = "gender_id")
+	private Genre genre;
+	
+	@OneToOne
+	@JoinColumn(name = "role_id")
+	private Role role;
+	
+	public User(int id, String nom, String prenom, int idG, String libelleG, Date date_de_naissance, String email, int idR, String libelleR) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.genre = new Genre(idG, libelleG);
+		this.date_de_naissance = date_de_naissance;
+		this.email = email;
+		this.role = new Role(idR, libelleR);
+	}
+	
+	public User() {
+		
+	}
+
+	public Collection<Adresse_Facturation> getAf() {
+		return af;
+	}
+
+	public void setAf(Collection<Adresse_Facturation> af) {
+		this.af = af;
+	}
+
+	public Collection<Adresse_Livraison> getAl() {
+		return al;
+	}
+
+	public void setAl(Collection<Adresse_Livraison> al) {
+		this.al = al;
+	}
+
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
+	public Date getDate_de_naissance() {
+		return date_de_naissance;
+	}
+
+	public void setDate_de_naissance(Date date_de_naissance) {
+		this.date_de_naissance = date_de_naissance;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", genre=" + genre + ", date_de_naissance="
+				+ date_de_naissance + ", email=" + email + ", role=" + role + "]";
+	}
+
+}

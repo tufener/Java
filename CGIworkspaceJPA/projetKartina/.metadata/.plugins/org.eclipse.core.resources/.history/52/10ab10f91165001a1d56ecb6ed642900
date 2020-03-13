@@ -1,0 +1,30 @@
+package com.example.demo.model;
+
+import java.sql.Date;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+public class Commandes {
+	
+	@GeneratedValue
+	@Id
+	private int id_Commande; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_client")
+	private Client client; 
+	
+	private Date date_Achat; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_role")
+	private Role role; 
+	
+	
+	private int prix_Final; 
+	
+
+}

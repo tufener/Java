@@ -1,0 +1,62 @@
+Adresse: 
+INSERT INTO `kartina`.`adresse`
+(`id_adresse`,
+`code_postale`,
+`is_active`,
+`numero`,
+`pays`,
+`rue`,
+`ville`,
+`id_utilisateur`)
+VALUES
+(1,
+"75000",
+true,
+83,
+"France",
+"Jean Jaures",
+"Paris",
+1);
+SELECT * FROM kartina.adresse;
+
+INSERT INTO `kartina`.`adresse`
+(`id_adresse`,
+`code_postale`,
+`is_active`,
+`numero`,
+`pays`,
+`rue`,
+`ville`,
+`id_utilisateur`)
+VALUES
+(2,
+"54000",
+true,
+45,
+"France",
+"Rue Stanislas",
+"Nancy",
+1);
+SELECT * FROM kartina.adresse;
+
+
+INSERT INTO `kartina`.`adresse`
+(`id_adresse`,
+`code_postale`,
+`is_active`,
+`numero`,
+`pays`,
+`rue`,
+`ville`,
+`id_utilisateur`)
+VALUES
+(3,
+"35000",
+true,
+45,
+"France",
+"Villejean",
+"Rennes",
+2);
+SELECT * FROM kartina.adresse;
+

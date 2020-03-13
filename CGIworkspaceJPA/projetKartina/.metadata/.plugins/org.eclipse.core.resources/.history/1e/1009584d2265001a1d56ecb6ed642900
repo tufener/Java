@@ -1,0 +1,38 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Reseaux_Sociaux;
+import com.example.demo.repository.PhotographiesRepository;
+import com.example.demo.repository.Reseaux_SociauxRepository;
+
+@RestController
+@RequestMapping("/reseaux_sociaux")
+public class Reseaux_SociauxController {
+	
+	@Autowired
+	private Reseaux_SociauxRepository rsr;
+	
+	@GetMapping("/listReseaux_sociaux")
+	public List<Reseaux_Sociaux> findAll() {
+		List<Reseaux_Sociaux> list = rsr.findAll();
+		return list;
+	}
+	
+	@PostMapping("/createReseaux_sociaux")
+	public ResponseEntity<Reseaux_Sociaux> createOrUpdate(@RequestBody Reseaux_Sociaux rs) {
+		Reseaux_Sociaux updated = rsr.save(rs);
+		return new ResponseEntity<Reseaux_Sociaux>(updated, new HttpHeaders(), HttpStatus.OK);	
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="genre")
+public class Photographies {
+	
+	private int id_photo;
+	private float prix_base; 
+	private String titre_photo; 
+	private String image_url; 
+	private int nb_tirages; 
+	private int nb_vente;
+	private int stock; 
+
+}

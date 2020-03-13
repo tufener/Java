@@ -1,0 +1,79 @@
+INSERT INTO `foodtruck`.`repas` (`id_repas`, `actif`, `heure_limite`) VALUES (1, false, "14");
+
+INSERT INTO `foodtruck`.`repas` (`id_repas`, `actif`, `heure_limite`) VALUES (2, true, "10");
+
+INSERT INTO `foodtruck`.`repas` (`id_repas`, `actif`, `heure_limite`) VALUES (3, true, "11");
+
+
+
+
+
+INSERT INTO `foodtruck`.`table_catalogue_produit`
+(`id_produit`,
+`composition`,
+`description`,
+`dispo`,
+`image_url`,
+`libelle_produit_commerciale`,
+`libelle_produit_technique`,
+`nbr_vente`,
+`prix`,
+`quantite`,
+`stock`,
+`famille_repas_id`)
+VALUES
+(1,
+"Un atome d’oxygène relié à deux atomes d’hydrogène",
+"Eau de source pur comme de l'eau",
+"1",
+"https://img2.freepng.fr/20180620/jxa/kisspng-vittel-mineral-water-drinking-water-perrier-acqua-panna-5b2a5e56f3ed17.0223030615295033189991.jpg",
+"Vittel eau de source",
+"Eau de source de Montagne venu du fin fond de l'Himalaya",
+25,
+32.2,
+12,
+45,
+1); 
+SELECT * FROM foodtruck.table_catalogue_produit;
+
+INSERT INTO `foodtruck`.`table_catalogue_produit`
+(`id_produit`,
+`composition`,
+`description`,
+`dispo`,
+`image_url`,
+`libelle_produit_commerciale`,
+`libelle_produit_technique`,
+`nbr_vente`,
+`prix`,
+`quantite`,
+`stock`,
+`famille_repas_id`)
+VALUES
+(2,
+"Chocolat au lait et Chocolat noir",
+"Choco Bon",
+"0",
+"https://img2.freepng.fr/20180620/jxa/kisspng-vittel-mineral-water-drinking-water-perrier-acqua-panna-5b2a5e56f3ed17.0223030615295033189991.jpg",
+"Choco Bon c'est très bon",
+"Meilleur gateau au chocolat au monde",
+21,
+34.2,
+10,
+42,
+2); 
+SELECT * FROM foodtruck.table_catalogue_produit;
+
+
+
+
+
+INSERT INTO `foodtruck`.`table_famille_repas` (`id_famille_repas`, `actif`) VALUES(1, true);
+SELECT * FROM foodtruck.table_famille_repas;
+
+INSERT INTO `foodtruck`.`table_famille_repas` (`id_famille_repas`, `actif`) VALUES (2, true);
+SELECT * FROM foodtruck.table_famille_repas;
+
+
+INSERT INTO `foodtruck`.`repas_famille_repas` (`repas_id`, `famille_repas_id`) VALUES (1,1);
+SELECT * FROM foodtruck.repas_famille_repas;

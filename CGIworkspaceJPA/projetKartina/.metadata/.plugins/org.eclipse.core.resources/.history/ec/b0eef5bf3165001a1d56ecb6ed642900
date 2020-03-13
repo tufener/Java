@@ -1,0 +1,114 @@
+Adresse: 
+INSERT INTO `kartina`.`adresse`
+(`id_adresse`,
+`code_postale`,
+`is_active`,
+`numero`,
+`pays`,
+`rue`,
+`ville`,
+`id_utilisateur`)
+VALUES
+(1,
+"75000",
+true,
+83,
+"France",
+"Jean Jaures",
+"Paris",
+1);
+SELECT * FROM kartina.adresse;
+
+INSERT INTO `kartina`.`adresse`
+(`id_adresse`,
+`code_postale`,
+`is_active`,
+`numero`,
+`pays`,
+`rue`,
+`ville`,
+`id_utilisateur`)
+VALUES
+(2,
+"54000",
+true,
+45,
+"France",
+"Rue Stanislas",
+"Nancy",
+1);
+SELECT * FROM kartina.adresse;
+
+
+INSERT INTO `kartina`.`adresse`
+(`id_adresse`,
+`code_postale`,
+`is_active`,
+`numero`,
+`pays`,
+`rue`,
+`ville`,
+`id_utilisateur`)
+VALUES
+(3,
+"35000",
+true,
+45,
+"France",
+"Villejean",
+"Rennes",
+2);
+SELECT * FROM kartina.adresse;
+
+
+Artiste:
+INSERT INTO `kartina`.`artiste`
+(`id_artist`,
+`nom`,
+`prenom`,
+`presentation`,
+`id_reseaux_sociaux`)
+VALUES
+(1,
+"Cadir",
+"Hasret",
+"Big Boss Beau Goss",
+1);
+SELECT * FROM kartina.artiste;
+
+INSERT INTO `kartina`.`artiste`
+(`id_artist`,
+`nom`,
+`prenom`,
+`presentation`,
+`id_reseaux_sociaux`)
+VALUES
+(2,
+"Jean",
+"Marie",
+"Eazy E boyz",
+2);
+SELECT * FROM kartina.artiste;
+
+Authentification:
+INSERT INTO `kartina`.`authentification`
+(`id_auth`,
+`email`,
+`password`)
+VALUES
+(1,
+"jean.marie@gmail.com",
+"azerty");
+SELECT * FROM kartina.authentification;
+
+INSERT INTO `kartina`.`authentification`
+(`id_auth`,
+`email`,
+`password`)
+VALUES
+(2,
+"marie.jean@gmail.com",
+"aaa");
+SELECT * FROM kartina.authentification;
+
+

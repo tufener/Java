@@ -1,0 +1,23 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="formats")
+public class Format {
+	@GeneratedValue
+	@Id
+	private int id_Format; 
+	private String format; 
+	
+	@ManyToMany(mappedBy = "format")
+	private Collection<Photographies> photoFormat; 
+	
+
+}

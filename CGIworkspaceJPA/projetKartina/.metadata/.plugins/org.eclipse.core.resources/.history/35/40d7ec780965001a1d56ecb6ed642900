@@ -1,0 +1,17 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.OneToMany;
+
+public class Artiste {
+	
+	private int id_artist; 
+	private String nom; 
+	private String prenom; 
+	private String presentation; 
+	
+	@OneToMany(mappedBy = "artiste")
+	private Collection<Photographies> photo;
+
+}

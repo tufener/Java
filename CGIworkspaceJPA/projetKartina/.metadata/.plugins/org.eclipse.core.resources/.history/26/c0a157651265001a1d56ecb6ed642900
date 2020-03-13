@@ -1,0 +1,42 @@
+package com.example.demo.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.FamilleRepas;
+import com.example.demo.model.Produit;
+import com.example.demo.repository.FamilleRepasRepository;
+import com.example.demo.repository.ProductRepository;
+
+@RestController
+@RequestMapping("/catalogue")
+public class ProduitController {
+
+	@Autowired
+	private ProductRepository productRepo;
+//	private FamilleRepasRepository frepasRepo;
+
+	@GetMapping("/listeCatalogue")
+	public List<Produit> listeCatalogue() {
+		List<Produit> list1 = productRepo.findAll();
+		
+		
+
+		return list1;
+	}
+
+	@PostMapping("/create")
+	public void create(@RequestBody Produit a, @RequestBody FamilleRepas fr1) {
+//		frepasRepo.save(fr1);
+		productRepo.save(a);
+
+	}
+
+}

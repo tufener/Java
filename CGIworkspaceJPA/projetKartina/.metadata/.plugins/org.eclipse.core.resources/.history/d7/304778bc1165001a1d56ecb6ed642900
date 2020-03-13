@@ -1,0 +1,41 @@
+package com.example.demo.model;
+
+import java.sql.Date;
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="photographies")
+public class Photographies {
+	
+	@GeneratedValue
+	@Id
+	private int id_Photo;
+	private float prix_Base; 
+	private String titre_Photo; 
+	private String image_Url; 
+	private int nb_Tirages; 
+	private int nb_Vente;
+	private int stock; 
+	private boolean isDIspo_Galery; 
+	private boolean isDispo_Livraison; 
+	private Date date_Mise_en_vente; 
+	
+	@ManyToOne
+	@JoinColumn(name = "id_artist")
+	private Artiste artiste;
+	
+	@OneToMany(mappedBy = "photo")
+	private Collection<Commandes_Photographies> commandePhoto; 
+	
+	
+	
+
+}

@@ -1,0 +1,24 @@
+package com.example.demo.controller;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.example.demo.model.Photographies;
+
+@Entity
+@Table(name="decorations")
+public class Decorations {
+	@GeneratedValue
+	@Id
+	private int id_deco; 
+	private String image_Url_deco; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_photo")
+	private Photographies photoDeco; 
+
+}

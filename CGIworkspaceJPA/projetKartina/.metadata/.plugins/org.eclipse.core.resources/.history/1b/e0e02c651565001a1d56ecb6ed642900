@@ -1,0 +1,19 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tag")
+public class Tag {
+	@GeneratedValue
+	@Id
+	private int id_tag; 
+	
+	private String tag; 
+	
+	private Photographies photoTag; 
+
+}

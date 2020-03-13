@@ -1,0 +1,36 @@
+package com.example.demo.model;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="photographies")
+public class Photographies {
+	
+	@GeneratedValue
+	@Id
+	private int id_Photo;
+	private float prix_base; 
+	private String titre_photo; 
+	private String image_url; 
+	private int nb_tirages; 
+	private int nb_vente;
+	private int stock; 
+	private boolean isDIspo_galery; 
+	private boolean isDispo_livraison; 
+	private Date date_mise_en_vente; 
+	
+	@ManyToOne
+	@JoinColumn(name = "artist_id")
+	private Artiste artiste;
+	
+	
+	
+
+}

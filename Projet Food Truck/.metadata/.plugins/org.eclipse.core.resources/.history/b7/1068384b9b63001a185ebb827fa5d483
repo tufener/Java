@@ -1,0 +1,33 @@
+package com.example.demo.controller;
+
+import java.util.List;  
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.demo.model.Genre;
+import com.example.demo.service.GenreService;
+
+public class GenreController {
+	
+	@Autowired
+	private GenreService gs;
+	
+	@GetMapping
+	public ResponseEntity<List<Genre>> findAll() {
+		List<Genre> list = gs.findAll();
+		return new ResponseEntity<List<Genre>>(list, new HttpHeaders(), HttpStatus.OK);
+	}
+	
+	@PostMapping()
+	public ResponseEntity<Genre> createOrUpdate(@RequestBody Genre g) {
+		Genre updated = gs.createOrUpdate(g);
+		return new ResponseEntity<Genre>(updated, new HttpHeaders(), HttpStatus.OK);	
+	}
+
+}
