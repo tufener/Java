@@ -1,0 +1,23 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="orientation")
+public class Orientation {
+	@GeneratedValue
+	@Id
+	private int id_Orientation; 
+	
+	private String orientation; 
+	
+	@OneToMany(mappedBy = "orientation")
+	private Collection<Photographies> photoOrientation; 
+
+}

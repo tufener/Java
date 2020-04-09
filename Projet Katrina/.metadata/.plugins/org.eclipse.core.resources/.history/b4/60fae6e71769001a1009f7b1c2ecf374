@@ -1,0 +1,24 @@
+package com.example.demo.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.Authentification;
+import com.example.demo.model.Utilisateur;
+
+@Repository
+public interface AuthentificationRepository extends JpaRepository<Authentification, Integer>{
+	
+	Optional<Authentification> findByEmail(String email);
+	Optional<Authentification> findByPassword(String password); 
+	@Query("select u from Authentification u where u.email=:leMail")
+	Authentification findMyQueryEmail(@Param("leMail") String email);
+	
+	@Query("select u from Authentification u where u.password=:lePassword")
+	Authentification findMyQueryPassword(@Param("lePassword") String password);
+
+}

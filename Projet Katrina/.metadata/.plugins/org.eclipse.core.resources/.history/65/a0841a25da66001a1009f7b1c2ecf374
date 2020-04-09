@@ -1,0 +1,62 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "formats")
+public class Theme {
+	@GeneratedValue
+	@Id
+	private int id_theme;
+	private String theme;
+
+	@ManyToMany(mappedBy = "theme")
+	private Collection<Photographies> photoTheme;
+
+	public int getId_theme() {
+		return id_theme;
+	}
+
+	public void setId_theme(int id_theme) {
+		this.id_theme = id_theme;
+	}
+
+	public String getTheme() {
+		return theme;
+	}
+
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
+
+	public Collection<Photographies> getPhotoTheme() {
+		return photoTheme;
+	}
+
+	public void setPhotoTheme(Collection<Photographies> photoTheme) {
+		this.photoTheme = photoTheme;
+	}
+
+	@Override
+	public String toString() {
+		return "Theme [id_theme=" + id_theme + ", theme=" + theme + ", photoTheme=" + photoTheme + "]";
+	}
+
+	public Theme(int id_theme, String theme, Collection<Photographies> photoTheme) {
+
+		this.id_theme = id_theme;
+		this.theme = theme;
+		this.photoTheme = photoTheme;
+	}
+
+	public Theme() {
+
+	}
+
+}

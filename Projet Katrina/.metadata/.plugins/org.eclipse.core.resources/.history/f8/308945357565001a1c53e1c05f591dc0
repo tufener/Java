@@ -1,0 +1,108 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="artiste")
+public class Artiste {
+	
+	@GeneratedValue
+	@Id
+	private int id_Artist; 
+	private String nom; 
+	private String prenom; 
+	private String presentation; 
+	
+	@OneToMany(mappedBy = "artiste")
+	private Collection<Photographies> photoArtiste;
+	
+	@OneToOne
+	@JoinColumn(name="id_reseaux_sociaux")
+	private Reseaux_Sociaux reseauxSociaux;
+	
+	
+
+	public int getId_Artist() {
+		return id_Artist;
+	}
+
+	public void setId_Artist(int id_Artist) {
+		this.id_Artist = id_Artist;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getPresentation() {
+		return presentation;
+	}
+
+	public void setPresentation(String presentation) {
+		this.presentation = presentation;
+	}
+
+	public Collection<Photographies> getPhotoArtiste() {
+		return photoArtiste;
+	}
+
+	public void setPhotoArtiste(Collection<Photographies> photoArtiste) {
+		this.photoArtiste = photoArtiste;
+	}
+
+	public Reseaux_Sociaux getReseauxSociaux() {
+		return reseauxSociaux;
+	}
+
+	public void setReseauxSociaux(Reseaux_Sociaux reseauxSociaux) {
+		this.reseauxSociaux = reseauxSociaux;
+	}
+
+	public Artiste(int id_Artist, String nom, String prenom, String presentation,
+			Collection<Photographies> photoArtiste, Reseaux_Sociaux reseauxSociaux) {
+	
+		this.id_Artist = id_Artist;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.presentation = presentation;
+		this.photoArtiste = photoArtiste;
+		this.reseauxSociaux = reseauxSociaux;
+	}
+
+	public Artiste() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Artiste [id_Artist=" + id_Artist + ", nom=" + nom + ", prenom=" + prenom + ", presentation="
+				+ presentation + ", photoArtiste=" + photoArtiste + ", reseauxSociaux=" + reseauxSociaux + "]";
+	} 
+	
+	
+
+	
+	
+	
+	
+}

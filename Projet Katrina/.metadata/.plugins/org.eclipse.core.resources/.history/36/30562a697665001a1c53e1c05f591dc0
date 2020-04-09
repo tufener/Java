@@ -1,0 +1,52 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="role")
+public class Role {
+
+	@GeneratedValue
+	@Id
+	private int id_Role;
+	private String status;
+	
+	@OneToOne(mappedBy = "role")
+	private Utilisateur utilisateur ; 
+	
+	public Role(int id_Role, String status) {
+		super();
+		this.id_Role = id_Role;
+		this.status = status;
+	}
+	
+	public Role() {
+		
+	}
+
+	public int getId() {
+		return id_Role;
+	}
+
+	public void setId(int id) {
+		this.id_Role = id;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "Role [id=" + id_Role + ", libelle=" + status + "]";
+	}
+	
+}

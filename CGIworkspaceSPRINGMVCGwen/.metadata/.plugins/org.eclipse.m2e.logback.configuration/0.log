@@ -1483,3 +1483,19 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact antlr:antlr:j
 2020-02-22 16:56:33,201 [Worker-34: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of formationSpringMvcv0
 2020-02-22 16:56:33,201 [Worker-34: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for formationSpringMvcv0
 2020-02-22 16:56:33,320 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-02-23 12:38:44,606 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-02-23 12:38:50,916 [Worker-0: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/projetSpringJpaDao: xxx:projetSpringJpaDao:1.0-SNAPSHOT with classifier  to /projetSpringJpaDao/target/classes
+2020-02-23 12:38:51,729 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-02-23 12:38:51,845 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kirklar\Desktop\Java\CGIworkspaceSPRINGMVCGwen\formationSpringMvcv0\src\main\resources
+2020-02-23 12:38:51,848 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-02-23 12:38:51,986 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kirklar\Desktop\Java\CGIworkspaceSPRINGMVCGwen\formationSpringMvcv0\src\test\resources
+2020-03-16 10:28:09,474 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-03-16 10:28:19,897 [Worker-2: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/projetSpringJpaDao: xxx:projetSpringJpaDao:1.0-SNAPSHOT with classifier  to /projetSpringJpaDao/target/classes
+2020-03-16 10:28:21,305 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-03-16 10:28:22,572 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kirklar\Desktop\Java\CGIworkspaceSPRINGMVCGwen\formationSpringMvcv0\src\main\resources
+2020-03-16 10:28:22,576 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-03-16 10:28:22,857 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kirklar\Desktop\Java\CGIworkspaceSPRINGMVCGwen\formationSpringMvcv0\src\test\resources
+2020-03-17 10:53:18,882 [Worker-81: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-03-17 10:53:24,552 [Worker-81: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2020-03-17 10:53:27,220 [Worker-81: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-03-17 10:53:27,388 [Worker-81: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kirklar\Desktop\Java\CGIworkspaceSPRINGMVCGwen\projetSpringJpaDao\src\test\resources

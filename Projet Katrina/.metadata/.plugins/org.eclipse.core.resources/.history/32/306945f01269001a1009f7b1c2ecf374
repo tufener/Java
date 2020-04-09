@@ -1,0 +1,55 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Photographies;
+import com.example.demo.repository.OrientationRepository;
+import com.example.demo.repository.PhotographiesRepository;
+
+@RestController
+@RequestMapping("/photographies")
+public class PhotographiesController {
+	
+	@Autowired
+	private PhotographiesRepository pr;
+	
+	@GetMapping("/photographies")
+	public ResponseEntity<List<Photographies>> findAll() {
+		return new ResponseEntity<List<Photographies>>(this.pr.findAll(), HttpStatus.OK);
+	}
+	
+	@PostMapping("/photographies")
+	public ResponseEntity<Photographies> createOrUpdate(@RequestBody Photographies p) {
+		if(this.pr.findById(p.getId_Photo()) == null)
+			return new ResponseEntity<Photographies>(HttpStatus.CONFLICT);
+		else {
+			Photographies updated = pr.save(p);
+			return new ResponseEntity<Photographies>(updated, new HttpHeaders(), HttpStatus.OK);	
+		}		
+	}
+	
+	@GetMapping("/photographies/news")
+	public ResponseEntity<List<Photographies>> listePhotoRecent() {
+		return new ResponseEntity<List<Photographies>>(this.pr.findRecentPhotographies(), HttpStatus.OK);
+	}
+
+	@GetMapping("/photographies/best")
+	public ResponseEntity<List<Photographies>> listeBestPhoto() {
+		return new ResponseEntity<List<Photographies>>(this.pr.findRecentPhotographies(), HttpStatus.OK);
+	}
+	
+//	@GetMapping("/photographies/lasts")
+//	public ResponseEntity<List<Photographies>> findLasts() {
+//		
+//	}
+}

@@ -1,0 +1,50 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Utilisateur;
+import com.example.demo.repository.UtilisateurRepository;
+
+@RestController
+@RequestMapping("/utilisateur")
+public class UtilisateurController {
+
+	@Autowired
+	private UtilisateurRepository us;
+
+	@GetMapping("/listUtilisateur")
+	public ResponseEntity<List<Utilisateur>> findAll() {
+		List<Utilisateur> liste = us.findAll();
+		return new ResponseEntity<List<Utilisateur>>(liste, new HttpHeaders(), HttpStatus.OK);
+	}
+	
+	@PostMapping("/createUtilisateur")
+	public ResponseEntity<String> create(@RequestBody Utilisateur utilisateur) {
+		if (!this.us.existsById(utilisateur.getId_utilisateur())) {
+			this.us.save(utilisateur);
+			return new ResponseEntity<>("Utilisateur crée", HttpStatus.CREATED);
+		} else {
+			return new ResponseEntity<>("Erreur, l'utilisateur existe déjà", HttpStatus.CONFLICT);
+		}
+	}
+	
+	
+
+	@PostMapping("/createUtilisateur")
+	public ResponseEntity<Utilisateur> createOrUpdate(@RequestBody Utilisateur user) {
+		Utilisateur updated = us.save(user);
+		return new ResponseEntity<Utilisateur>(updated, new HttpHeaders(), HttpStatus.OK);
+	}
+
+}

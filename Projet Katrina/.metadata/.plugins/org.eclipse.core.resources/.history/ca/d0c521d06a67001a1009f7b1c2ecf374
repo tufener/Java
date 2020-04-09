@@ -1,0 +1,79 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "finition")
+public class Finition {
+	@GeneratedValue
+	@Id
+	private int id_Finition;
+
+	private String finition;
+	private String description; 
+
+	@OneToMany(mappedBy = "finition")
+	private Collection<Commandes_Photographies> commandePhoto;
+
+	public int getId_Finition() {
+		return id_Finition;
+	}
+
+	public void setId_Finition(int id_Finition) {
+		this.id_Finition = id_Finition;
+	}
+
+	public String getFinition() {
+		return finition;
+	}
+
+	public void setFinition(String finition) {
+		this.finition = finition;
+	}
+
+	public Collection<Commandes_Photographies> getCommandePhoto() {
+		return commandePhoto;
+	}
+
+	public void setCommandePhoto(Collection<Commandes_Photographies> commandePhoto) {
+		this.commandePhoto = commandePhoto;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Finition [id_Finition=" + id_Finition + ", finition=" + finition + ", description=" + description
+				+ ", commandePhoto=" + commandePhoto + "]";
+	}
+
+	public Finition(int id_Finition, String finition, String description,
+			Collection<Commandes_Photographies> commandePhoto) {
+		
+		this.id_Finition = id_Finition;
+		this.finition = finition;
+		this.description = description;
+		this.commandePhoto = commandePhoto;
+	}
+
+	public Finition() {
+		
+	}
+
+
+
+
+
+}

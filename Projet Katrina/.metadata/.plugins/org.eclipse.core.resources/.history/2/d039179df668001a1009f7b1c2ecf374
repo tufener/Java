@@ -1,0 +1,59 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Authentification;
+import com.example.demo.repository.AuthentificationRepository;
+
+@RestController
+@RequestMapping("/authentification")
+public class AuthentificationController {
+	
+	@Autowired
+	private AuthentificationRepository authRepo; 
+	
+	@GetMapping("/listeAuthentification")
+	public List<Authentification> findAll() {
+		List<Authentification> list = authRepo.findAll();
+		return list; 
+	}
+//	
+//	@PostMapping("/createAuthentification")
+//	public ResponseEntity<Authentification> createOrUpdate(@RequestBody Authentification auth) {
+//		Authentification updated = authRepo.save(auth);
+//		return new ResponseEntity<Authentification>(updated, new HttpHeaders(), HttpStatus.OK);	
+//	}
+	
+
+	@PostMapping("/login")
+	public ResponseEntity<String> create(@RequestBody Authentification auth) {
+		if (!this.authRepo.existsById(auth.getId_auth())) {
+			this.authRepo.save(auth);
+			return new ResponseEntity<>("Utilisateur crée", HttpStatus.CREATED);
+		} else {
+			return new ResponseEntity<>("Erreur, l'utilisateur existe déjà", HttpStatus.CONFLICT);
+		}
+	}
+	
+	@GetMapping("/auth/{id}")
+	public ResponseEntity<Authentification> findById(@PathVariable(name = "id") Integer id) {
+		if (this.authRepo.existsById(id)) {
+			return new ResponseEntity<>(this.authRepo.findById(id).get(), HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(new Authentification(), HttpStatus.NOT_FOUND);
+		}
+
+	}
+	
+	
+}

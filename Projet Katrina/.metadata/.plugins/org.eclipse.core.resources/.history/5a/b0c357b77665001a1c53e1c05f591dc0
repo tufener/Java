@@ -1,0 +1,23 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tag")
+public class Tag {
+	@GeneratedValue
+	@Id
+	private int id_tag; 
+	
+	private String tag; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_photo")
+	private Photographies photoTag; 
+
+}

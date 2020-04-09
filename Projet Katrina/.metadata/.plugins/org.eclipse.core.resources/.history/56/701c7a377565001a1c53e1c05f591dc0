@@ -1,0 +1,104 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="adresse")
+public class Adresse {
+	@GeneratedValue
+	@Id
+	private int id_Adresse; 
+	
+	@ManyToOne
+	@JoinColumn(name="id_utilisateur")
+	private Utilisateur utilisateurAdresse; 
+	
+	private int numero; 
+	private String rue; 
+	private String code_Postale; 
+	private String ville; 
+	private String pays;
+	private boolean isActive;
+	
+	
+	public int getId_Adresse() {
+		return id_Adresse;
+	}
+	public void setId_Adresse(int id_Adresse) {
+		this.id_Adresse = id_Adresse;
+	}
+	public Utilisateur getUtilisateurAdresse() {
+		return utilisateurAdresse;
+	}
+	public void setUtilisateurAdresse(Utilisateur utilisateurAdresse) {
+		this.utilisateurAdresse = utilisateurAdresse;
+	}
+	public int getNumero() {
+		return numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	public String getRue() {
+		return rue;
+	}
+	public void setRue(String rue) {
+		this.rue = rue;
+	}
+	public String getCode_Postale() {
+		return code_Postale;
+	}
+	public void setCode_Postale(String code_Postale) {
+		this.code_Postale = code_Postale;
+	}
+	public String getVille() {
+		return ville;
+	}
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+	public String getPays() {
+		return pays;
+	}
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
+	public boolean isActive() {
+		return isActive;
+	}
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+	public Adresse(int id_Adresse, Utilisateur utilisateurAdresse, int numero, String rue, String code_Postale,
+			String ville, String pays, boolean isActive) {
+		
+		this.id_Adresse = id_Adresse;
+		this.utilisateurAdresse = utilisateurAdresse;
+		this.numero = numero;
+		this.rue = rue;
+		this.code_Postale = code_Postale;
+		this.ville = ville;
+		this.pays = pays;
+		this.isActive = isActive;
+	}
+	public Adresse() {
+		
+	}
+	@Override
+	public String toString() {
+		return "Adresse [id_Adresse=" + id_Adresse + ", utilisateurAdresse=" + utilisateurAdresse + ", numero=" + numero
+				+ ", rue=" + rue + ", code_Postale=" + code_Postale + ", ville=" + ville + ", pays=" + pays
+				+ ", isActive=" + isActive + "]";
+	} 
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,78 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "formats")
+public class Format {
+	@GeneratedValue
+	@Id
+	private int id_Format;
+	private String format;
+	private String description; 
+
+	@ManyToMany(mappedBy = "format")
+	private Collection<Photographies> photoFormat;
+
+	@OneToMany(mappedBy = "formats")
+	private Collection<Commandes_Photographies> commandePhotographies;
+
+	public int getId_Format() {
+		return id_Format;
+	}
+
+	public void setId_Format(int id_Format) {
+		this.id_Format = id_Format;
+	}
+
+	public String getFormat() {
+		return format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
+	}
+
+	public Collection<Photographies> getPhotoFormat() {
+		return photoFormat;
+	}
+
+	public void setPhotoFormat(Collection<Photographies> photoFormat) {
+		this.photoFormat = photoFormat;
+	}
+
+	public Collection<Commandes_Photographies> getCommandePhotographies() {
+		return commandePhotographies;
+	}
+
+	public void setCommandePhotographies(Collection<Commandes_Photographies> commandePhotographies) {
+		this.commandePhotographies = commandePhotographies;
+	}
+
+	@Override
+	public String toString() {
+		return "Format [id_Format=" + id_Format + ", format=" + format + ", photoFormat=" + photoFormat
+				+ ", commandePhotographies=" + commandePhotographies + "]";
+	}
+
+	public Format(int id_Format, String format, Collection<Photographies> photoFormat,
+			Collection<Commandes_Photographies> commandePhotographies) {
+
+		this.id_Format = id_Format;
+		this.format = format;
+		this.photoFormat = photoFormat;
+		this.commandePhotographies = commandePhotographies;
+	}
+
+	public Format() {
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="finition")
+public class Finition {
+	@GeneratedValue
+	@Id
+	private int id_Finition; 
+	
+	private String finition; 
+	
+	@OneToMany(mappedBy = "finition")
+	private Collection<Commandes_Photographies> commandePhoto; 
+
+}

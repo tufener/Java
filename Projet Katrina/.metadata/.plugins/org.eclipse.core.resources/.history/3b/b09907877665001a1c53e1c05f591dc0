@@ -1,0 +1,24 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="reseaux_sociaux")
+public class Reseaux_Sociaux {
+	
+	@GeneratedValue
+	@Id
+	private int id_Reseaux_Sociaux; 
+	
+	private String facebook_Url; 
+	private String twitter_Url; 
+	private String pinteres_Url; 
+	
+	@OneToOne(mappedBy = "reseauxSociaux")
+	private Artiste artiste; 
+
+}

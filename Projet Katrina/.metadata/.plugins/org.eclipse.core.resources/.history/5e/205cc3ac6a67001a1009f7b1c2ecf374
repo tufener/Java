@@ -1,0 +1,73 @@
+package com.example.demo.model;
+
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "cadre")
+public class Cadre {
+	@GeneratedValue
+	@Id
+	private int id_Cadre;
+	private String cadre;
+	private String description;
+
+	@OneToMany(mappedBy = "cadre")
+	private Collection<Commandes_Photographies> commandePhoto;
+
+	public int getId_Cadre() {
+		return id_Cadre;
+	}
+
+	public void setId_Cadre(int id_Cadre) {
+		this.id_Cadre = id_Cadre;
+	}
+
+	public String getCadre() {
+		return cadre;
+	}
+
+	public void setCadre(String cadre) {
+		this.cadre = cadre;
+	}
+
+	public Collection<Commandes_Photographies> getCommandePhoto() {
+		return commandePhoto;
+	}
+
+	public void setCommandePhoto(Collection<Commandes_Photographies> commandePhoto) {
+		this.commandePhoto = commandePhoto;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Cadre [id_Cadre=" + id_Cadre + ", cadre=" + cadre + ", description=" + description + ", commandePhoto="
+				+ commandePhoto + "]";
+	}
+
+	public Cadre(int id_Cadre, String cadre, String description, Collection<Commandes_Photographies> commandePhoto) {
+
+		this.id_Cadre = id_Cadre;
+		this.cadre = cadre;
+		this.description = description;
+		this.commandePhoto = commandePhoto;
+	}
+
+	public Cadre() {
+
+	}
+
+}
