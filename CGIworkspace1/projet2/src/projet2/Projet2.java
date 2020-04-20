@@ -6,7 +6,8 @@ public class Projet2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		testAffiche();
+//		testAffiche();
+		testhello();
 
 	}
 
@@ -16,18 +17,23 @@ public class Projet2 {
 
 	}
 
-	static void testhello() { // même résultat que celui d'avant.
-		hello("toto");
-		String s = "titi";
-		String nom = "abcd";
-		hello(s);
-		hello(nom);
+	static void hello2(String nom) { //
+		String reponse = "hello\t" + nom;
+		System.out.println(reponse);
 
 	}
 
-	static void testhello2(String nom) { //
-		String reponse = "hello\t" + nom;
-		System.out.println(reponse);
+	static void testhello() { // même résultat que celui d'avant.
+		hello("toto");
+		hello2("maria");
+		String s = "titi";
+		String nom = "abcd";
+		String s2 = "manuela";
+		String nom2 = "frederica";
+		hello(s);
+		hello(nom);
+		hello2(s2);
+		hello2(nom2);
 
 	}
 
@@ -134,10 +140,10 @@ public class Projet2 {
 	}
 
 	static void testAffiche() { // surcharge de méthode (Overload en anglais)
-		//String str = affiche("toto");
+		// String str = affiche("toto");
 		affiche("toto"); // pour cet appel ça peut demander aux deux c'est pour
 							// ça que c'est pas considéré comme une surcharge.
-							// ça peut faire appel  à d'autre valeur que l'on ne veut pas se servir. 
+							// ça peut faire appel à d'autre valeur que l'on ne veut pas se servir.
 
 	}
 
@@ -171,8 +177,8 @@ public class Projet2 {
 	}
 	/*
 	 * static void affiche(String nom,String adresse){ // surcharge de méthode
-	 * (Overload en anglais) System.out.println("hello nom: " + nom +
-	 * " prenom: " + prenom);
+	 * (Overload en anglais) System.out.println("hello nom: " + nom + " prenom: " +
+	 * prenom);
 	 * 
 	 * }
 	 */
